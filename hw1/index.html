@@ -1,57 +1,688 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Project 1</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-    }
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-    }
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
 
-    h1 {
-      color: #333;
-    }
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
 
-    h2 {
-      color: #666;
-    }
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
 
-    p {
-      color: #444;
-    }
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
 
-    img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Project 1</h1>
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
 
-    <h2>Overview</h2>
-    <p>
-      In this project, we developed a basic rasterization engine capable of rendering lines, triangles, and shapes from SVG files, adding color and texture. We explored various sampling techniques for texture filtering and mipmap level adjustment. The experience enhanced our understanding of applying theoretical formulas to practical image generation and rendering, translating class-learned concepts into visual outcomes based on coordinates and directives.
-    </p>
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
 
-    <h2>Task 1</h2>
-    <p>
-      To rasterize triangles, we will first create a bounding box for the triangle. This is achieved by calculating the minimum and maximum x and y coordinates among the vertices and rounding them to integer values to establish the boundaries of the loop. Then, for each integer coordinate within this bounding box, we check whether each pixel lies inside the triangle by using the three-line test. Essentially, this works by treating each line as the boundary of a half-plane, where the half-plane includes the area within the triangle. If a point is inside all three half-planes, then it must be inside of the triangle. If a pixel is determined to be inside the triangle, the <code>fill_pixel</code> function is called to color it with the specified color. This process repeats for every pixel within the bounding box, effectively rasterizing the triangle. Overall, the algorithm's integer grid-based approach, coupled with geometric principles, minimizes unnecessary computations, ensuring that it performs no worse than one that checks each sample within the bounding box. In fact, it likely outperforms such a brute-force approach in terms of both computational efficiency and accuracy in rasterizing the triangle.
-    </p>
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
 
-    <img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161830847.png" alt="screenshot_2-16_18-29-52">
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
 
-    <!-- Add more sections as needed -->
-  </div>
-</body>
-</html>
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="13052860-9a76-43db-8fda-f1f5a0a8071b" class="page serif"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><figure id="c9540a3b-a694-41bf-b256-49e8f08dbe3d" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="1.44em"><mtext>CS 184. Foundations of Computer Graphics 2024 Spring</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.44em"><mtext>Homework 1: Rasterizer</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.2em"><mtext>Zhenzhe Li</mtext></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Large \text{CS 184. Foundations of Computer Graphics 2024 Spring}\\ \Large \text{Homework 1: Rasterizer}\\
+\large \text{Zhenzhe Li}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.28em;vertical-align:-0.28em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord">CS 184. Foundations of Computer Graphics 2024 Spring</span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:1em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord">Homework 1: Rasterizer</span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:0.8333em;"></span><span class="mord text sizing reset-size6 size7"><span class="mord">Zhenzhe Li</span></span></span></span></span></span></div></figure><p id="425e332f-01db-4c27-96dc-2710c063183d" class="">
+</p><figure id="7f9181a6-5fe1-4f3d-95fb-a95fad7caab2" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Overview</mtext></mrow><annotation encoding="application/x-tex">\text{Overview}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">Overview</span></span></span></span></span></span></div></figure><p id="cebd8c12-759d-494f-8405-ac3ee06c3a6b" class="">In this project, we developed a basic rasterization engine capable of rendering lines, triangles, and shapes from SVG files, adding color and texture. We explored various sampling techniques for texture filtering and mipmap level adjustment.</p><p id="199b057d-8625-45d3-b84b-6b21884ba8a6" class="">The experience enhanced our understanding of applying theoretical formulas to practical image generation and rendering, translating class-learned concepts into visual outcomes based on coordinates and directives.</p><figure id="3d3077e1-2511-4d8d-b5f6-603812f82bf3" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Task 1: Drawing Single-Color Triangles</mtext></mrow><annotation encoding="application/x-tex">\text{Task 1: Drawing Single-Color Triangles}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Task 1: Drawing Single-Color Triangles</span></span></span></span></span></span></div></figure><p id="64235840-c905-47c8-a781-a3a4a01979d4" class="">To rasterize triangles, we will first create a bounding box for the triangle. This is achieved by calculating the minimum and maximum x and y coordinates among the vertices and rounding them to integer values to establish the boundaries of the loop.</p><p id="c30f9b02-0873-4149-949f-4808f8dab6f9" class="">Then, for each integer coordinate within this bounding box, we check whether each pixel lies inside the triangle by using the three-line test. Essentially, this works by treating each line as the boundary of a half-plane, where the half-plane includes the area within the triangle. If a point is inside all three half-planes, then it must be inside of the triangle.</p><p id="e4cd6056-4caf-4e2c-8300-ccf4def832c8" class="">If a pixel is determined to be inside the triangle, the <code>fill_pixel</code> function is called to color it with the specified color. This process repeats for every pixel within the bounding box, effectively rasterizing the triangle.</p><p id="9a377b7f-acaa-48aa-b0c0-8825b6936e3d" class="">Overall, the algorithm&#x27;s integer grid-based approach, coupled with geometric principles, minimizes unnecessary computations, ensuring that it performs <strong>no worse than one that checks each sample within the bounding box</strong>. In fact, it likely outperforms such a brute-force approach in terms of both computational efficiency and accuracy in rasterizing the triangle.</p><p id="f273271a-5ce9-48e9-892f-46c47e4d0013" class="">The image below illustrates how triangles in <em>test4.svg</em> are rendered:<div class="indented"><figure id="284e0a2a-c7e8-4584-852f-03543fbed59e" class="image" style="text-align:center"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161830847.png"><img style="width:384px" src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161830847.png"/></a><figcaption><strong>Result of test4.svg</strong></figcaption></figure><p id="fdbfdf1a-3bf3-41dc-ad69-21d50016a916" class="">
+</p></div></p><figure id="a6141fbb-74f7-40a9-945e-8816f0544775" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Task 2: Antialiasing by Supersampling</mtext></mrow><annotation encoding="application/x-tex">\text{Task 2: Antialiasing by Supersampling}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Task 2: Antialiasing by Supersampling</span></span></span></span></span></span></div></figure><ol type="1" id="57e9aada-174a-479c-b339-a7d29d855a87" class="numbered-list" start="1"><li>Walkthrough of Supersampling Algorithm and Data Structures:<p id="becd3ffd-a193-4a71-bf2d-6794e244bccb" class="">In supersampling, we enhance image quality by subdividing each pixel into smaller segments and sampling from each segment. This division helps mitigate high-frequency artifacts and jagged edges.</p><p id="2845d102-edb4-442b-bcca-9e2446112353" class="">To implement this, we add two nested loops within each pixel to iterate through subsamples, repeating the process <code>sample_rate</code> times. Within these loops, we still utilize the method to check if the subsample point falls within the triangle, writing the result to the <code>sample_buffer</code> vector. This buffer stores the color values for each subsample point within a pixel. To generate the final image, we use the <code>resolve_to_framebuffer</code> method, which computes the average color from the subsample points for each pixel, thereby producing a smooth and improved final output.</p></li></ol><ol type="1" id="e9fddd51-2d68-424b-b14f-bc6c5dd44076" class="numbered-list" start="2"><li>Why Supersampling is Useful:<p id="7f72fa5b-41e1-40e5-87b9-72660dcba027" class="">By subdividing pixels into smaller segments and sampling multiple points within each segment, supersampling effectively increases the resolution of the rendered image. This process helps to capture finer details and smoother transitions, resulting in a more visually pleasing and realistic final image.</p></li></ol><ol type="1" id="d9d0bbce-f824-4e6d-a63a-1e1e633e8901" class="numbered-list" start="3"><li>Modifications to the Rasterization Pipeline:<ul id="9812f24d-d32f-4f3f-b718-84a8f3e37504" class="bulleted-list"><li style="list-style-type:disc">The size of sample_buffer was changed from <code>width * height</code> to.</li></ul><ul id="720eb3bf-9ce9-4514-a19a-3c399c14abb3" class="bulleted-list"><li style="list-style-type:disc">The function <code>rasterize_triangle</code> and <code>fill_pixel</code> were changed to get/fill the subpixels’ color.</li></ul><ul id="3b7222de-3680-4f6e-b0d5-1c8b5fc3de52" class="bulleted-list"><li style="list-style-type:disc">The function <code>resolve_to_framebuffer()</code>was changed to handle the mean of color.</li></ul></li></ol><ol type="1" id="bacf8c74-85c8-4ac0-94fc-6d8d14a3fce0" class="numbered-list" start="4"><li>Explanation of Supersampling for Antialiasing Triangles:<p id="57737d2e-ef54-4ff2-bcfe-bae954f74bc6" class="">By utilizing supersampling, we effectively antialias our triangles by sampling multiple points within each pixel. Then, by averaging the colors of multiple subsample points within each pixel, we achieve smoother transitions and improved image quality.</p></li></ol><p id="05e0f6da-aa7b-44e1-baf2-3916699382f7" class="">Below are some comparison images.</p><p id="98805c9f-1876-492c-85b5-7ead12cb7170" class="">
+</p><div id="2788b3b7-a876-4c41-a384-e9749906766b" class="column-list"><div id="ea4c3fca-3191-4c55-927c-31c0375fcf76" style="width:33.333333333333336%" class="column"><figure id="f619acd6-4870-46da-869e-497b4fe00f5b" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161851625.png"><img style="width:384px" src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161851625.png"/></a><figcaption>test4.svg 1 pixel subsample result</figcaption></figure></div><div id="9d4d0a3b-bd83-48b4-9e56-14b18936df11" style="width:33.333333333333336%" class="column"><figure id="71f0f34a-19a0-4e71-89ee-c5e373955486" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161851419.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161851419.png"/></a><figcaption>test4.svg 4 pixel subsample result</figcaption></figure></div><div id="26c3acb6-8d60-48c9-8075-142f1c4a19dd" style="width:33.33333333333333%" class="column"><figure id="61bf6c22-ef23-4fb6-9ebd-a1978b61ae55" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161850119.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161850119.png"/></a><figcaption>test4.svg 4 pixel subsample result</figcaption></figure></div></div><p id="3b678e03-f2a1-4224-9727-404a0b3e3c6d" class="">The observed improvements in image quality resulting from increasing the subsampling size stem from the reduction in the size of the subsamples. This reduction enables smoother transitions between pixel colors in the final image. By gradually changing colors across smaller segments we effectively mitigate aliasing, reducing the visibility of jagged edges, and minimizing high-frequency changes within the image.</p><p id="85922b4e-fdeb-4b4b-80d1-17b82e2a089b" class="">
+</p><figure id="6f4218f0-e7a4-48b5-a6f4-ca64f9f4c716" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Task 3: Transforms</mtext></mrow><annotation encoding="application/x-tex">\text{Task 3: Transforms}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">Task 3: Transforms</span></span></span></span></span></span></div></figure><p id="c9f7a349-73d5-45c7-804c-7ddd3b864f19" class="">We can see the cube-man waving with his right hand!!!</p><figure id="38e94263-9944-457d-b482-5e39c6fbaf92" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162148104.png"><img style="width:432px" src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162148104.png"/></a><figcaption>Result from my_robot.svg</figcaption></figure><p id="1d825af0-59d2-486b-a4ec-164c1efc29c0" class="">
+</p><figure id="b94ed858-a19a-480e-bc84-a465a859e289" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Task 4: Barycentric coordinates</mtext></mrow><annotation encoding="application/x-tex">\text{Task 4: Barycentric coordinates}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Task 4: Barycentric coordinates</span></span></span></span></span></span></div></figure><p id="fb59cf6d-0991-413d-8c47-90eaf4350c52" class="">Barycentric coordinates are a coordinate system utilized for seamless interpolation within triangles. They enable straightforward assessment of proximity to each vertex and maintain accurate ratios between them. This facilitates smooth transitions in color or texture, aiding in anti-aliasing and simplifying point sampling within the triangle.</p><p id="c4352eb2-2263-498c-b962-2ce979022e9c" class="">As shown in the second image, with three vertices colored in red, green, and blue respectively, the interior of the triangle produces a smoothly blended color triangle as the position varies.</p><div id="f29cfe72-3f4f-45ba-a453-bf4354c4ac42" class="column-list"><div id="f50b5f51-f40f-4718-84cc-c5b36b9f878d" style="width:50%" class="column"><figure id="0b52789a-f0c0-419a-957f-c54e5a4bf5cf" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162231617.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162231617.png"/></a><figcaption>test7.svg result</figcaption></figure></div><div id="3121bf35-fd26-4138-a748-01264b142d6d" style="width:50%" class="column"><figure id="6765efd4-223d-44fa-a772-5859db8c901d" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162230210.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162230210.png"/></a><figcaption>Color triangle using Barycentric coordinates</figcaption></figure></div></div><figure id="d9cb3e36-c5c6-45f3-acb6-c3426bdc7406" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Task 5: &quot;Pixel sampling&quot; for texture mapping</mtext></mrow><annotation encoding="application/x-tex">\text{Task 5: &quot;Pixel sampling&quot; for texture mapping}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Task 5: &quot;Pixel sampling&quot; for texture mapping</span></span></span></span></span></span></div></figure><p id="b0265c5b-b9e8-4cc4-834e-a926e12a733f" class="">In texture mapping, pixel sampling involves determining the color of each pixel on a rendered surface by sampling the corresponding texture image. This is achieved by interpolating between texels (texture elements) to find the appropriate color values for each pixel based on its position on the surface and the texture coordinates associated with it.</p><p id="409eed83-01ba-44fc-89ca-8cfcb3b8176d" class="">Within our project, we implemented both nearest and bilinear pixel sampling methods. Nearest sampling selects the color of a pixel based on the nearest texel in the texture, which is simple but can lead to aliasing artifacts due to sharp transitions. Bilinear sampling improves upon this by blending colors from nearby texels using interpolation, resulting in smoother transitions and reduced aliasing.</p><div id="abebe702-5a8c-4627-ad88-a362ace138cf" class="column-list"><div id="fe8bcc0d-c08f-46f0-9f83-4028253cbcb3" style="width:50%" class="column"><figure id="5896f0b6-ad3e-4aab-9546-9eb5d5467a8b" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162316640.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162316640.png"/></a><figcaption> nearest pixel sampling 1 subsample</figcaption></figure></div><div id="1623924b-b139-4b38-8fdc-7b11397a9f67" style="width:50%" class="column"><figure id="2ea0e411-fc23-4cd2-942f-264009925dff" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162317860.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162317860.png"/></a><figcaption> nearest pixel sampling 16 subsample</figcaption></figure></div></div><p id="06b35dcc-cc67-4501-b080-f78ee9dcbdd3" class="">
+</p><div id="b021ef3b-7c9b-447c-ad3c-e951c07bf93a" class="column-list"><div id="63659ba3-74a4-4e78-a658-e11dd055af97" style="width:50%" class="column"><figure id="363c4955-daf7-4067-ba3d-769dd90eaf73" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162317983.png"><img style="width:432px" src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162317983.png"/></a><figcaption> bilinear pixel sampling 1 subsample</figcaption></figure></div><div id="f4a6720a-4682-496a-87da-4262caa4a676" style="width:50%" class="column"><figure id="71a34114-a628-4c50-b1a6-9766204715e6" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162318927.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402162318927.png"/></a><figcaption> bilinear pixel sampling 16 subsample</figcaption></figure></div></div><p id="a0a10396-4348-446b-92ee-76e14076cd27" class="">Bilinear pixel sampling images exhibit smoother edges and fewer artifacts in comparison to images generated using nearest sampling with the same supersampling rate. This contrast is most evident when textures feature distinct color boundaries, as illustrated in the provided example where a sharp cutoff separates blue and yellow regions in the circle. Because of the occur of high frequency change, nearest sampling without supersampling struggles to handle such color transitions, resulting in noticeable jagged edges. By employing bilinear sampling and increasing the supersampling rate, the antialiasing effect is enhanced, leading to significantly smoother images.</p><p id="d4113268-af20-4d3c-bc6a-d05dda0d380d" class="">
+</p><figure id="8434b6ec-2384-4507-bdbb-d82326922ae1" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Task 6: &quot;Level sampling&quot; with mipmaps for texture mapping</mtext></mrow><annotation encoding="application/x-tex">\text{Task 6: &quot;Level sampling&quot; with mipmaps for texture mapping}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Task 6: &quot;Level sampling&quot; with mipmaps for texture mapping</span></span></span></span></span></span></div></figure><p id="0f992320-fe44-44df-85a7-bda76f887a56" class="">Level Sampling refers to the method of selecting the appropriate mipmap level for a given image. This selection process involves calculating the derivative of a single pixel about dx and dy and subsequently applying Barycentric coordinates to transition this into uv space. Through this process, we can assess the degree of stretching or compression present in the image, which in turn guides the determination of the most suitable mipmap level for the image. Our implementation covers mipmap level zero, along with nearest level sampling and bilinear level techniques.</p><ul id="645817c7-59e2-42fd-ba4a-7e4b8aeeca45" class="bulleted-list"><li style="list-style-type:disc"><code>L_ZERO</code>: Utilizing only the original texture (Level 0) for the entire image, L_ZERO presents the simplest form of texture sampling. This method minimizes computational demands and memory footprint by avoiding the need for additional textures or levels. The major trade-off, however, is its susceptibility to aliasing artifacts. Due to the absence of any sophisticated antialiasing processes, images processed with L_ZERO may exhibit noticeable jaggedness or pixelation, especially in high-contrast areas or at steep viewing angles.</li></ul><ul id="b43d711a-7030-4896-b617-1570915d96c0" class="bulleted-list"><li style="list-style-type:disc"><code>L_NEAREST</code>: By calculating and rounding the appropriate level to the nearest whole number, L_NEAREST samples from a specific mipmap level. This technique represents a middle ground in the spectrum of texture sampling methods. It improves upon L_ZERO by utilizing mipmaps to reduce aliasing, thus offering better image quality at the cost of increased memory usage to store these additional texture levels. The computational overhead is moderate, as it involves simple rounding operations and direct sampling from the determined mipmap level, balancing processing speed with a moderate level of antialiasing.</li></ul><ul id="4d3a67db-930a-42d3-9bbc-21df8fb417be" class="bulleted-list"><li style="list-style-type:disc"><code>L_LINEAR</code>: The most sophisticated among the three, L_LINEAR interpolates between the two levels closest to the calculated value using bilinear filtering. This technique requires the highest computational resources due to the need for calculating floor and ceiling functions for level selection, followed by performing interpolation between color values from these levels. The benefit of this complex process is a significant enhancement in antialiasing quality, yielding smoother and more visually appealing images. The trade-offs for this high-quality output are increased memory usage for storing multiple levels of mipmaps and the substantial computational effort needed for the interpolation process.</li></ul><p id="c093fbfd-e165-4155-a82f-eb589dd639a6" class="">We use an image of the corner of an ice-mountain to test, just like below:</p><figure id="9b15d548-deaf-4936-bfdb-6c87088144d6" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171548758.png"><img style="width:288px" src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171548758.png"/></a><figcaption>The origin image</figcaption></figure><div id="9122befd-a6f8-4d4d-a511-6f646f1ee24d" class="column-list"><div id="b3829ee7-6c06-4482-95f9-b41028e52222" style="width:50%" class="column"><figure id="93c9b30a-fb74-459a-9ea4-ad602214320e" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171552550.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171552550.png"/></a><figcaption>L_ZERO and P_NEAREST:</figcaption></figure></div><div id="464a3fe9-a74d-42fe-87eb-12a97e70e0fd" style="width:50%" class="column"><figure id="cdb2f254-9108-409d-a41f-875b414c8889" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171552827.png"><img style="width:384px" src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171552827.png"/></a><figcaption> L_ZERO and P_LINEAR</figcaption></figure></div></div><p id="3a07a5df-66d2-43fd-8a71-0cb79e4568cc" class="">
+</p><div id="5530fd58-3e6f-4204-bd87-38a07e5bddc0" class="column-list"><div id="5410bd96-3081-47b0-a5e8-9fcb15e4b609" style="width:50%" class="column"><figure id="78519474-37ba-4454-9ff3-49ca563338bf" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171552815.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171552815.png"/></a><figcaption> L_NEAREST and P_NEAREST</figcaption></figure></div><div id="4d7165f8-c2f2-4f36-bdc6-db0213fdc1ad" style="width:50%" class="column"><figure id="472bfb6d-6efd-4973-8615-9d91bea70e9c" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171553921.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171553921.png"/></a><figcaption>L_NEAREST and P_LINEAR</figcaption></figure></div></div><p id="3beae12b-8304-4a8f-a652-78ffcfffb7cc" class="">
+</p><div id="5b2f5998-99ab-4c96-a938-0cc1e5e29aed" class="column-list"><div id="b2581b7f-a168-4ef5-bdf1-c369dbf0a991" style="width:50%" class="column"><figure id="77962a18-7f2b-47a3-9f9e-35448884035b" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171553663.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171553663.png"/></a><figcaption>   L_LINEAR and P_NEAREST</figcaption></figure></div><div id="9bb11ad7-90da-4d3e-bd3c-819e57ed5986" style="width:50%" class="column"><figure id="42bce7f1-749e-4b52-8de2-93d746cab1b5" class="image"><a href="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171553306.png"><img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402171553306.png"/></a><figcaption> L_LINEAR and P_LINEAR</figcaption></figure></div></div><p id="a56db9bf-b31e-4d8a-afa4-4631f40c68e6" class="">From the results, we can see that the use of L_NEAREST, L_LINEAR, and P_LINEAR precisely results in smoother edges and fewer artifacts.</p><p id="9a31c103-690c-4dcb-9819-735f68c19e8a" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
