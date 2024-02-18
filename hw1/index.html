@@ -1,7 +1,35 @@
-<html>
-	<head>
-	</head>
-	<body>
-		Homework 1 index.html here
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project1</title>
+</head>
+
+<body>
+    <h1>Project1</h1>
+
+    <h2>Overview</h2>
+
+    <p>In this project, we developed a basic rasterization engine capable of rendering lines, triangles, and shapes from SVG files, adding color and texture. We explored various sampling techniques for texture filtering and mipmap level adjustment.</p>
+
+    <p>The experience enhanced our understanding of applying theoretical formulas to practical image generation and rendering, translating class-learned concepts into visual outcomes based on coordinates and directives.</p>
+
+    <h2>Task 1</h2>
+
+    <p>To rasterize triangles, we will first create a bounding box for the triangle. This is achieved by calculating the minimum and maximum x and y coordinates among the vertices and rounding them to integer values to establish the boundaries of the loop.</p>
+
+    <p>Then, for each integer coordinate within this bounding box, we check whether each pixel lies inside the triangle by using the three-line test. Essentially, this works by treating each line as the boundary of a half-plane, where the half-plane includes the area within the triangle. If a point is inside all three half-planes, then it must be inside of the triangle.</p>
+
+    <p>If a pixel is determined to be inside the triangle, the <code>fill_pixel</code> function is called to color it with the specified color. This process repeats for every pixel within the bounding box, effectively rasterizing the triangle.</p>
+
+    <p>Overall, the algorithm's integer grid-based approach, coupled with geometric principles, minimizes unnecessary computations, ensuring that it performs <strong>no worse than one that checks each sample within the bounding box</strong>. In fact, it likely outperforms such a brute-force approach in terms of both computational efficiency and accuracy in rasterizing the triangle.</p>
+
+    <p>The image below illustrates how triangles in <em>test4.svg</em> are rendered:</p>
+
+    <img src="https://lzztypora.oss-cn-beijing.aliyuncs.com/202402161830847.png" alt="screenshot_2-16_18-29-52"
+        style="zoom:67%;" />
+</body>
+
 </html>
