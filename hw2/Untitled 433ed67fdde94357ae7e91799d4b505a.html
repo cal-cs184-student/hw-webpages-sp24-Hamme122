@@ -1,0 +1,685 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="433ed67f-dde9-4357-ae7e-91799d4b505a" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><figure id="15419b25-af93-461e-accc-9b2c0a26c1af" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="1.44em"><mtext>CS 184. Foundations of Computer Graphics 2024 Spring</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.44em"><mtext>Homework 2: Mesh Editor</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.2em"><mtext>Destiny Luong, Zhenzhe Li</mtext></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Large \text{CS 184. Foundations of Computer Graphics 2024 Spring}\\ \Large \text{Homework 2: Mesh Editor}\\
+\large \text{Destiny Luong, Zhenzhe Li}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.28em;vertical-align:-0.28em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord">CS 184. Foundations of Computer Graphics 2024 Spring</span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:1em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord">Homework 2: Mesh Editor</span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:1.0667em;vertical-align:-0.2333em;"></span><span class="mord text sizing reset-size6 size7"><span class="mord">Destiny Luong, Zhenzhe Li</span></span></span></span></span></span></div></figure><figure id="d41f938d-acab-4770-bfca-335e6cca756e" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Overview</mtext></mrow><annotation encoding="application/x-tex">\text{Overview}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">Overview</span></span></span></span></span></span></div></figure><p id="51e3533d-20bf-40b9-8431-8c6427a00d93" class="">In this project, we learned and implemented the creation and manipulation of Bezier curves and surfaces, the calculation of area-weighted vertex normals, the efficient mesh manipulation such as edge flipping and splitting in the half-edge data structure, and the application of loop subdivision for mesh refinement. We also learned a lot from the process of debugging.</p><figure id="9cf3d041-9c22-4f4b-8714-51a3e7cae847" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 1: Bezier curves with 1D de Casteljau subdivision</mtext></mrow><annotation encoding="application/x-tex">\text{Part 1: Bezier curves with 1D de Casteljau subdivision}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 1: Bezier curves with 1D de Casteljau subdivision</span></span></span></span></span></span></div></figure><p id="dab2d9e5-b44c-46f9-b51a-fab7a7d77dcd" class="">De Casteljau&#x27;s algorithm is a recursive approach for evaluating Bezier curves, which recursively linearly interpolates between the control points of the Bézier curve<strong> until a single point is obtained.</strong> This point is on the Bezier curve for the given parameter t, which varies from 0 to 1. </p><p id="98384ff8-2bb8-4c86-a67c-92da4afffdd6" class="">In our implementation, we finished the <code>evaluateStep</code> function, where for a given set of points, it computes the next set of intermediate points by linearly interpolating between each pair of adjacent points using the parameter <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span></span><span>﻿</span></span>. In every call to this function, we establish a loop that iterates through each pair of adjacent points in the input vector, linearly interpolates between them, and stores the result in a new vector to return.</p><p id="0c85c79d-7e14-4918-a6e2-2f6abfb9cf30" class="">Below we show our result of a bezier curve with <strong>6</strong> control points. We can see each step of the evaluation from the original control points down to the final evaluated point. And we also show the result after moving the original control points around and modifying the parameter <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6151em;"></span><span class="mord mathnormal">t</span></span></span></span></span><span>﻿</span></span>.</p><div id="f931380d-356d-4e72-b2c7-0995139fd318" class="column-list"><div id="63753aac-8684-4d77-82cc-2e13588203df" style="width:50%" class="column"><figure id="c462625e-d65b-4d92-b519-67821ac40c28" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve1.png"><img style="width:384px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve1.png"/></a><figcaption>Level 1 + Curve:</figcaption></figure></div><div id="127b4b11-8dad-4bc4-8452-86889bb421cd" style="width:50%" class="column"><figure id="96d4aecc-f85a-4d0a-8236-09fad24f1e0e" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve2.png"><img style="width:961px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve2.png"/></a><figcaption>Level 2 + Curve:</figcaption></figure></div></div><div id="18e8a9f1-8d53-482d-838f-d10c16a566a3" class="column-list"><div id="eddeb8f8-e3e0-4241-b555-aae58424d2ea" style="width:50%" class="column"><figure id="c50f2019-b731-4869-a4ec-277f81cda6b3" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve3.png"><img style="width:956px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve3.png"/></a><figcaption>Level 3 + Curve:</figcaption></figure></div><div id="8f68145a-39e3-4fcd-8e7a-a0b7fbe86e6a" style="width:50%" class="column"><figure id="60f37315-c31f-490c-91b2-58a3044484ec" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve5.png"><img style="width:953px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve5.png"/></a><figcaption>Level 4 + Curve</figcaption></figure></div></div><div id="3bcfe9ea-dd95-4f90-98c8-b527f1d76e14" class="column-list"><div id="87d374a1-a1a0-402d-8c40-26e73532021b" style="width:50%" class="column"><figure id="9ba388b9-0452-477d-b439-9bf11abd4048" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve5%201.png"><img style="width:288px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve5%201.png"/></a><figcaption>Level 5 + Curve:</figcaption></figure></div><div id="1daedd1c-cfc1-4562-8fce-674a08da9b32" style="width:50%" class="column"><figure id="45c3c36d-6fbb-4a09-9590-0ac0ec36b0a8" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve6.png"><img style="width:947px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/curve6.png"/></a><figcaption>Different control points &amp; parameter t</figcaption></figure></div></div><p id="6ae6c1b2-a8bb-40b7-98bf-b23a93f6d6a1" class="">
+</p><figure id="cc5d3c31-4f70-4d96-bff4-6ff427aab6c7" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 2: Bezier surfaces with separable 1D de Casteljau</mtext></mrow><annotation encoding="application/x-tex">\text{Part 2: Bezier surfaces with separable 1D de Casteljau}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 2: Bezier surfaces with separable 1D de Casteljau</span></span></span></span></span></span></div></figure><p id="b68d7d82-e680-4492-b3cb-9f01939a8bed" class="">De Casteljau&#x27;s algorithm extends to Bezier surfaces by applying the same principle used for Bezier curves but in two dimensions. For a Bezier surface, control points are arranged in a grid (or a mesh) rather than a single sequence. </p><p id="b1bf2b4b-31ab-47cf-83a7-5a826e114bbe" class="">In our implementation, we finished 3 functions here. This first function <code>BezierPatch::evaluateStep</code> linearly interpolates between original control points to simplify them, creating intermediate points. The second function <code>BezierPatch::evaluate1D</code>  loops through the levels of points (the amplification) until we get a single point that represents a specific location on the Bezier curve or surface. And the last function <code>BezierPatch::evaluate</code> loops through the whole mesh, by taking the control point of each curve that we calculated previously and then calculating the singular point between them to create another singular control point that thus works in both the x and y direction.</p><p id="dec03bb9-7c97-4424-8708-8a3e2def059c" class="">Our result of <code>Teapot.bez</code>is shown below:</p><figure id="15f53e57-24ca-4b0c-a6d9-439eb05da24e" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Teapot.png"><img style="width:432px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Teapot.png"/></a><figcaption>Result of <code>Teapot.bez</code></figcaption></figure><p id="0ba014e3-7854-4716-8a99-bed80ab5b1f4" class="">
+</p><figure id="8fb4a3d7-128f-48dd-8b81-b8cfdec83bf4" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 3: Area-Weighted Vertex Normals</mtext></mrow><annotation encoding="application/x-tex">\text{Part 3: Area-Weighted Vertex Normals}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 3: Area-Weighted Vertex Normals</span></span></span></span></span></span></div></figure><p id="861e6f18-43a9-49db-baa9-856062c525f6" class="">In the process of implementing the area-weighted vertex normals, we utilized an iterative approach that loops through all the neighboring triangles of a given vertex. For each triangle, we find its three vertexes first and then we calculate the normal by taking the cross product of two edges emanating from the vertex. We also calculate the triangles’ area using half of the cross product. Then each normal is then scaled by the area of the triangle, and we got the final vertex normal by normalizing this sum. The shading results with and without vertex normals are shown below:</p><div id="a1ad8e90-573a-4b9f-a4a1-b86265361661" class="column-list"><div id="a6acc16a-598e-470c-aedf-de341b99808a" style="width:50%" class="column"><figure id="a823e34f-5c73-4bef-9be0-e466b4ea1eed" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled.png"><img style="width:960px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled.png"/></a><figcaption>Teapot shading without vertex normals</figcaption></figure><p id="44212d2b-bb87-4624-b6d4-1201a6b0e71c" class="">
+</p></div><div id="fae7ca8b-87a2-4ccd-bb0d-a2ce01c1268b" style="width:50%" class="column"><figure id="9b8935c8-8fb1-439d-895d-ee56e520bb8e" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%201.png"><img style="width:958px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%201.png"/></a><figcaption>Teapot shading with vertex normals</figcaption></figure><p id="f7302446-e1e2-439b-9f16-740532e6d240" class="">
+</p></div></div><figure id="7c46560d-d1e1-4f62-998c-4adcff5b73c9" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 4: Edge Flip</mtext></mrow><annotation encoding="application/x-tex">\text{Part 4: Edge Flip}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 4: Edge Flip</span></span></span></span></span></span></div></figure><p id="448fd581-8b5d-4d24-b62e-887e9e0fa9aa" class="">In the process of implementing the edge flip, we first check for boundary conditions. If <code><strong>e0-&gt;isBoundary()</strong></code> returns true, we return immediately. Then we draw every element containing ten half-edges, four vertexes, five edges, and two faces and reassign every element’s pointer. The results before and after the edge flip are shown below:</p><div id="4e741f1c-6874-4626-883c-1a3b254cf997" class="column-list"><div id="070636ff-0b28-4e47-bd8c-6ae3c54e0989" style="width:50%" class="column"><figure id="3b1582a9-4c73-4370-b632-b07427fef28e" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%202.png"><img style="width:955px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%202.png"/></a><figcaption>Teapot without edge flip</figcaption></figure></div><div id="741835ed-87d4-437c-b26a-ed54b453fb94" style="width:50%" class="column"><figure id="a1c37c52-58d8-4e54-af8e-4bdecd439cbd" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%203.png"><img style="width:956px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%203.png"/></a><figcaption>Teapot after some edge flip</figcaption></figure></div></div><p id="9cb65e1c-f0cb-4fd8-9716-498f8bf82e21" class="">When debugging our code, the first problem is that we can’t use <code><strong>EdgeCIter</strong></code>to define an edge. This is because we need to change the pointer of the edge, so we should use <code><strong>EdgeIter</strong></code>, which will not define this edge as a const. The second problem is that we shouldn’t define e0 again because it was the input of our function🥲. And because we reset all pointers of all elements, no more problems occur.</p><figure id="2b38632f-b9ac-4418-b7e9-1194096d22b2" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 5: Edge Split</mtext></mrow><annotation encoding="application/x-tex">\text{Part 5: Edge Split}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 5: Edge Split</span></span></span></span></span></span></div></figure><p id="8154ab33-d977-4f36-ae90-f148c8939751" class="">In the process of implementing the edge split, firstly, as shown below, we marked the relevant half-edges, vertices, edges, and faces surrounding the edge to be split. Then we identify the origin elements and allocate new elements. And the new vertex is positioned at the midpoint of the original edge. Finally, we reassign elements, ensuring the mesh remains manifold and returns the midpoint.</p><figure id="ab86e28e-89c9-49ef-a557-fced1402f642" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%204.png"><img style="width:384px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%204.png"/></a><figcaption>Mark of the triangle after the split</figcaption></figure><p id="282586f4-c7cb-4670-87a7-7b2e4768b19b" class="">The results before and after some edge splits are shown below:</p><div id="20cbc055-24ee-4302-a39b-7e9234fca690" class="column-list"><div id="0f593aba-d737-4ba2-8f21-3fcb67053484" style="width:50%" class="column"><figure id="922354ea-d0f1-49d2-b084-b29a10c3d6a7" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%205.png"><img style="width:959px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%205.png"/></a><figcaption>Before some edge splits</figcaption></figure></div><div id="3dbf7f2c-346b-4344-9836-e65ee36523a4" style="width:50%" class="column"><figure id="41af8832-0607-469c-a730-1b4cc28e5acd" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%206.png"><img style="width:958px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%206.png"/></a><figcaption>After some edge splits</figcaption></figure></div></div><p id="7c20bcb7-c741-46df-89c4-c19d3a6afb8f" class="">The results before and after a combination of both edge splits and edge flips are shown below:</p><div id="75ec2b90-cfd6-4743-8e99-a85c7d6cc102" class="column-list"><div id="045ca7f8-80e3-48da-9d80-f72074be9a84" style="width:50%" class="column"><figure id="44de9dbe-8b56-447f-9336-dcb40b3b856a" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%205.png"><img style="width:959px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%205.png"/></a><figcaption>Before a combination of both edge splits and edge flips </figcaption></figure></div><div id="8c29d554-2528-482a-b808-8b51e658d6d3" style="width:50%" class="column"><figure id="c24888df-0a4d-4ffe-8a37-d6799004f3dc" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%207.png"><img style="width:958px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%207.png"/></a><figcaption>After a combination of both edge splits and edge flips </figcaption></figure></div></div><p id="2d474926-a376-4766-88cb-51411c69b963" class="">The problem I encountered in debugging was that I only defined the midpoint, forgetting to calculate its position🥲. This resulted in the hole.</p><p id="4557cca1-b7b3-4503-b774-844352efa9b4" class="">And we have also implemented support for boundary edges. We marked different elements using the method shown below:</p><figure id="fabc91bd-d590-4d33-903d-676ddef33bc5" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%208.png"><img style="width:288px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%208.png"/></a></figure><p id="a5e72dd0-0ede-4bda-b79c-4a18f14cf1cd" class="">Then just like the steps before, we identified the origin elements allocated new elements, and then reassigned them. The results from <code>beetle.dae</code> are shown below. We can see the purple line in the car, only splitting in half the face that is non-boundary.</p><div id="fe9473a8-be60-4204-8b85-75bccff47c41" class="column-list"><div id="dd8dd432-97b8-4c28-aece-e91a581fefee" style="width:50%" class="column"><figure id="f8f7cbab-c265-4417-9e87-4b2846c9bbe0" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%209.png"><img style="width:956px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%209.png"/></a><figcaption>Before some edge splits in the boundary</figcaption></figure></div><div id="5045c356-169a-434c-a966-1f1a29a83a5c" style="width:50%" class="column"><figure id="817d6b08-50b7-46ad-8000-f9b79e56353e" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%2010.png"><img style="width:959px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/Untitled%2010.png"/></a><figcaption>After some edge splits in the boundary</figcaption></figure></div></div><figure id="55fb7744-b735-4bb1-aa35-08fbcf7c529d" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 6: Looping Subdivision for Mesh Upsampling</mtext></mrow><annotation encoding="application/x-tex">\text{Part 6: Looping Subdivision for Mesh Upsampling}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 6: Looping Subdivision for Mesh Upsampling</span></span></span></span></span></span></div></figure><p id="aff5f267-696a-4fde-9dcd-326a5994695c" class="">We implemented loop subdivision by using five separate for-loops that go through the whole mesh. The first and second for-loops work to find the new positions of each new vertex, which allows for the averaging out or smoothing effect. For the positions of the old vertices, we checked it’s neighbors in a rhombus-like path. For the positions of new vertices, we went through all of the edges to find the closest points. The third loop focuses on splitting each edge into 2 and the fourth for-loop flips the edges appropriately, cleaning up the mesh. The final for-loop then moves each vertex to it’s calculated position in the model.</p><p id="06200d08-7b49-4be3-b9df-7c47ae159f38" class="">After the loop subdivision, the sharp corners and edges start to become curves and thus beginning to smooth out. You can probably reduce this effect by having more splits and points along the edges and vertices. This is because the points in the model remain mostly unchanged, instead the faces and edges are formed by averaging these points. As such, the more points there are in an area, the less they are affected by smoothing. We can see this from this object that seems to have sharp edges by having many points near the edges and sharp points:</p><div id="3f242741-7bda-4772-a767-a7f21cd2eece" class="column-list"><div id="18ae4395-3ff4-4f4d-85cd-8c3e2c2dd76d" style="width:50%" class="column"><p id="995ab525-089d-4b11-ab82-4e7d211310af" class="">Level 1:</p></div><div id="0e422109-12cf-4122-91db-84b14cb76e16" style="width:50%" class="column"><p id="dedd5539-3da2-46fe-86c2-7817b734cff9" class="">Level 3:</p></div></div><div id="239d0553-44be-46ce-813d-d9dec7b82d9b" class="column-list"><div id="ba36bd2e-4606-4dce-bcdb-b9aa646f5c80" style="width:50%" class="column"><figure id="37b6e31f-cd59-4507-a41c-b99ed613eb63" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/linemesh.png"><img style="width:943px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/linemesh.png"/></a></figure></div><div id="3ff7790d-c075-4b04-a08b-019a0fecddda" style="width:50%" class="column"><figure id="581a1389-b6e1-4331-a4eb-416e0eb3cdfe" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/linemesh2.png"><img style="width:957px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/linemesh2.png"/></a></figure></div></div><p id="6aaf2542-80dd-48f0-8be5-fed6407e358f" class="">We can also see the cube results from level 1 to level 4 as below:</p><div id="8a7cac59-48cb-42b6-8f16-ffb9215c8c6c" class="column-list"><div id="594d0e34-25d7-48dd-a4dc-38ae09b4b8ad" style="width:50%" class="column"><figure id="f3a5d0b8-2a2e-4ad0-980d-b1b9e88be451" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/cube.png"><img style="width:951px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/cube.png"/></a><figcaption>Level 1 </figcaption></figure><figure id="b744ef72-e7ff-42bf-a9de-b419fe8d9e20" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/cube3.png"><img style="width:951px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/cube3.png"/></a><figcaption>Level 3</figcaption></figure></div><div id="27b05d68-d6dc-4a8b-99cc-857d5999d9fe" style="width:50%" class="column"><figure id="bff81f2e-3c26-4333-8f99-965d17ad2a49" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/cube2.png"><img style="width:952px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/cube2.png"/></a><figcaption>Level 2 </figcaption></figure><figure id="b8f81a64-2063-4cf4-976e-452f2a560150" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/cube4.png"><img style="width:956px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/cube4.png"/></a><figcaption>Level 4</figcaption></figure></div></div><p id="7da817ca-2bb6-4235-abc1-1159b71ee1d2" class="">Pre-processing can help alleviate these effects as our current algorithm averages the vertices’ positions while simultaneously doing subdivision. Since our mesh is built diagonally-leaning the smoothing will also follow that shape. However, if we were to divide up our points before-hand we would have more information on how to average out vertex positions, thus maintaining the shape of the cube. In terms of making it more symmetric, we can change the way that we split the edges so that both sides of the mesh are the same, rather than having it lean to one side like before. </p><p id="1897ac0c-f3a5-4af9-bfa5-9688aa656bbe" class="">As you can see below, we split each side of the cube symmetrically before processing it and the end product turned out more symmetrical:</p><div id="0d7cf5e7-7bbe-4297-8a91-08e48ad16137" class="column-list"><div id="2d3d14ff-5ff6-49ea-a6c9-860cfe01d0ed" style="width:50%" class="column"><figure id="49cbde67-60e4-4495-aaca-0266a4617174" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/cubeeq.png"><img style="width:960px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/cubeeq.png"/></a><figcaption>Level 1 after processing</figcaption></figure><figure id="4d3dcff8-eb0a-4150-9f78-0077db2f3d44" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/cubeeq2.png"><img style="width:960px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/cubeeq2.png"/></a><figcaption>Level 3 after processing</figcaption></figure><p id="ff246edc-06a8-44df-8b3c-2575068194a1" class="">
+</p></div><div id="3f579f77-da9a-43cb-8641-ceebc04f5e14" style="width:50%" class="column"><figure id="dec646ea-af2d-41c3-baff-a08304de019e" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/cubeeq1.png"><img style="width:952px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/cubeeq1.png"/></a><figcaption>Level 2 after processing</figcaption></figure><figure id="868bf9bb-4f81-4314-96ef-3fd02dcfb65e" class="image"><a href="Untitled%20433ed67fdde94357ae7e91799d4b505a/cubeeq3.png"><img style="width:955px" src="Untitled%20433ed67fdde94357ae7e91799d4b505a/cubeeq3.png"/></a><figcaption>Level 4 after processing</figcaption></figure><p id="5fe6e0fe-ce31-4805-b152-4f644c501dc4" class="">
+</p></div></div><p id="b2501abc-cc4e-4c41-ac3e-1000c7669086" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
