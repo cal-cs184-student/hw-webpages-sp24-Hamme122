@@ -1,0 +1,708 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="ff8d76ef-2d89-40d6-b79f-4b8ded2265f1" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><figure id="5b60fdeb-cabd-4227-bdf6-8a9910036279" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="1.44em"><mtext>CS 184. Foundations of Computer Graphics 2024 Spring</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.44em"><mtext>Homework 3: Pathtracer</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.2em"><mtext>Destiny Luong, Zhenzhe Li</mtext></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Large \text{CS 184. Foundations of Computer Graphics 2024 Spring}\\ \Large \text{Homework 3: Pathtracer}\\
+\large \text{Destiny Luong, Zhenzhe Li}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.28em;vertical-align:-0.28em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord">CS 184. Foundations of Computer Graphics 2024 Spring</span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:1em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord">Homework 3: Pathtracer</span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:1.0667em;vertical-align:-0.2333em;"></span><span class="mord text sizing reset-size6 size7"><span class="mord">Destiny Luong, Zhenzhe Li</span></span></span></span></span></span></div></figure><figure id="c1e89ed0-a45c-41bd-9978-e5a57e229f4f" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Overview</mtext></mrow><annotation encoding="application/x-tex">\text{Overview}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">Overview</span></span></span></span></span></span></div></figure><p id="01387007-2365-44ca-8bbd-fe4657acb8b5" class="">In this project, we tried to implement ray-tracing by using simulating rays, direct and indirect lighting, and illumination, while using concepts such as uniform hemisphere sampling, lighting sampling, and BVH, as well as equations such as the Monte Carlo Sum, Russian Roulette to create more realistic images and 3D renders. </p><p id="55851eb0-462e-4fe0-b944-48707c954918" class="">Part 1 focused on ray generation and scene intersection, this allowed us to simulate rays of light and see if they interacted with our scene primitives, creating the base work for the other parts. Part 2 focused on Bounding Volume Hierarchy, which allowed us to check ray intersections on a bigger scale. Since it’s hard to check every part of the 3D model, we instead split that model into sets of primitives with a hierarchical structure in order to check intersections in a faster and more controlled way. We then move on to Part 3, direct illumination, which by using the interactions from Part 2, is able to light the image using the Monte Carlo Sum and direct lighting methods. Part 4, on the flip side, focuses on Global Illumination, which looks at material and other sources of light that do not directly come from the light source. Essentially, we are continuously bouncing the rays off of the many parts of the scene and checking their intersections to create light reflections. In Part 5, we use adaptive sampling, to reduce the noise in an image while also keeping in mind that not all pixels need high sample rates.</p><p id="2109b436-c5b1-482b-8ad7-43ad1e74fe25" class="">Our results seem to follow the staff solution, however, some of our rendering times are way slower than expected. We think this could be because of the way we wrote out our Parts 3 and 4. We believe we could’ve wrote our code in a way that filtered out more unnecessary intersections. For example,  some of our functions could’ve used <code>has_intersection()</code> which short circuits instead of intersecting, but we didn’t use it as much as we could have.</p><p id="13e93f3d-8a20-4b99-bd3a-c976494b41c3" class="">We have not completed any extra credit items for this project.</p><p id="455a17e4-d809-459f-8c61-1bf19783439e" class="">In this project, we both split up the project into parts and attempted to do Parts 1 and 2 separately. We soon realized that the parts relied heavily on one another so we continued to write out our parts separately, however, we would switch between parts if we were ever stuck. If we couldn’t progress through the pipeline we would both try to debug the part that wouldn’t run. If either of us couldn’t continue working on the specific part, for whatever reason, that individual would render images and complete earlier parts of the write-up. Through this project, we learned how to simulate how lights and object interact with each other. We also learned about different ways to sample and split up images so that they are able to render fast, efficiently, and with a higher quality.</p><p id="b03a1648-4d29-4969-9352-d361b23fff4d" class="">
+</p><figure id="750bb73c-3dd8-4006-a162-a34da4bda632" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 1: Ray Generation and Scene Intersection</mtext></mrow><annotation encoding="application/x-tex">\text{Part 1: Ray Generation and Scene Intersection}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 1: Ray Generation and Scene Intersection</span></span></span></span></span></span></div></figure><p id="ae337c54-10ce-459c-9a8c-28b0b68fb0d3" class="">In the process of implementing ray generation, firstly, we convert image coordinates into camera space and generate rays within this space, and then transform these rays into world space, achieving ray generation from a virtual camera to any point in the scene. Also considering ray tracing for <strong>each pixel</strong>, we loop to generate a specified number of camera rays and trace them through the scene to calculate the average color value under global illumination as the pixel value.</p><p id="829b5a3d-c38f-44af-90c6-dd24a3743a46" class="">In the process of handling Scene Intersection, for triangle primitives, we use the Möller-Trumbore algorithm, which involves computing cross products and dot products to solve for the intersection parameters: <code><strong>t</strong></code> for the distance along the ray, and <code><strong>b1</strong></code> and <code><strong>b2</strong></code> for the barycentric coordinates within the triangle. If an intersection occurs within the bounds of the triangle and along the ray&#x27;s direction within the restriction of <code>r.max_t</code> and <code>r.min_t</code>, we will update the <code><strong>Intersection</strong></code> structure with details about the <strong>nearest</strong> intersection point.</p><p id="159f80a1-a1d6-4231-8e03-a5edb18f925b" class="">The logistics for sphere primitives are similar. The differences are the calculation of <code>t</code> which utilizes the equation of intersection of straight line and circle, and the calculation of the surface normal, which is pointing from the sphere center to the intersection point.</p><p id="31e88e7c-d96f-4afb-82c0-89a3c08c9048" class="">We rendered four <code>.dae</code> files as shown below. Each picture takes about 5 to 10 minutes, and in actual experiments, we found that the smoothness of the edges has a significant relationship with the <code>-s</code> (sample per pixel) setting.</p><div id="a3d42c7f-6049-4951-b6fd-3a17aff7c565" class="column-list"><div id="dcfa5dfd-a0a5-4893-8208-c6b65fa3c68b" style="width:50%" class="column"><figure id="19fb2597-92ee-44d2-b466-f63a83b82a9a" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBspheres.png"><img style="width:800px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBspheres.png"/></a><figcaption>CBspheres_lambertian.dae</figcaption></figure></div><div id="88ff7e2f-78f6-433b-9c1e-7f763f3534d2" style="width:50%" class="column"><figure id="89e8794a-95f9-4af9-8898-b10f6d6b763e" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bench.png"><img style="width:800px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bench.png"/></a><figcaption>bench.dae</figcaption></figure></div></div><div id="3eca4df7-204b-4667-9b3c-f4f8b5240276" class="column-list"><div id="65795d38-ace3-436c-a627-aecabba6dfc9" style="width:50%" class="column"><figure id="eae7e8ca-ae3a-41f5-8ff9-60fcd59f6d75" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/blob2.png"><img style="width:800px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/blob2.png"/></a><figcaption>blob.dae</figcaption></figure></div><div id="bdb18141-7606-48a2-be11-e92689de50d2" style="width:50%" class="column"><figure id="53a29d97-7675-49c5-99af-97784a227ac8" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny.png"><img style="width:800px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny.png"/></a><figcaption>bunny.dae</figcaption></figure></div></div><p id="b59042b2-b720-428a-86a7-723b3f8b4da3" class="">
+</p><figure id="84cfa5b2-70f8-483d-98ab-b75629a0b0ea" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 2: Bounding Volume Hierarchy</mtext></mrow><annotation encoding="application/x-tex">\text{Part 2: Bounding Volume Hierarchy}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 2: Bounding Volume Hierarchy</span></span></span></span></span></span></div></figure><p id="5e5d7318-fd5c-4414-9df1-8334d70198f3" class="">In order to create the BVH, we first go through every primitive, as well as their centroids and count them. We then average them by taking the centroid and we divide it by the primitive count. Next, we check if the number of primitives is less than or equal to <code>max_leaf_size</code>. If this is the case, we know that the current node is a leaf node. In that case, we create a new node and set the start and end nodes to the given start and end arguments, then we return the node. If the node is not a leaf node, we then use the average centroid to figure out which axis we will be dividing on. The longest axis of the average will be the one used. We then create two empty vectors to hold the primitives and once again loop through every primitive. If the centroid of the primitive is less than that of the average, we then place it in the left primitive, else we place it in the right one. We then set the start and end of the two sets and then set the left and right of the current node to a recursive call using the start, end, and <code>max_leaf_size</code>. Lastly, we return the node.  </p><p id="bcc0e801-37a7-4afd-a8a2-49125ad6597d" class="">With the help of BVH, we rendered several <code>.dae</code> files with tens of thousands of primitives in just a few seconds. The following are the running results and time.</p><div id="a5a5dbb0-b730-44c4-8936-ac55d089e5f9" class="column-list"><div id="269fb0a6-0b65-40fc-b96d-ea10ce224f88" style="width:50%" class="column"><figure id="c1754828-0e0e-4004-b3f0-c7e5be07663f" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/maxplanck.png"><img style="width:800px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/maxplanck.png"/></a><figcaption>meshedit/cow.dae with 2.4815s</figcaption></figure><figure id="53fd738d-8e92-440b-b966-b84f298edc2a" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled.png"><img style="width:384px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled.png"/></a></figure></div><div id="1bfa019c-089a-4aae-a9d5-a94c968ba381" style="width:50%" class="column"><figure id="5f65e635-37fd-427d-a285-8fcf2ac4c4c2" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBlucy.png"><img style="width:800px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBlucy.png"/></a><figcaption><em>CBlucy.dae with 0.1223s </em></figcaption></figure><figure id="73ed6042-fc5b-489f-aa9f-e47ed10c2403" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%201.png"><img style="width:904px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%201.png"/></a></figure></div></div><p id="f2c7d9e4-32e5-45f8-88a7-2746bc577b64" class="">We also compare rendering times on two scenes with moderately complex geometries with and without BVH acceleration. The table below is a comparison of time</p><table id="6076ba59-5335-4263-8cc8-eed995b99f8d" class="simple-table"><tbody><tr id="e6068579-9aca-4bc6-9a4e-b3fe4e17cba1"><td id="~ISg" class="">Time</td><td id="ZdIf" class="">With BVH</td><td id="zrpz" class="">Without BVH</td></tr><tr id="944566f6-0e22-409f-ac9c-66e7e2010be6"><td id="~ISg" class="">CBcoil.dae</td><td id="ZdIf" class="">0.0590s</td><td id="zrpz" class="">50.7084s</td></tr><tr id="4c38f5d6-18e2-486b-80d8-fd78e9f11a64"><td id="~ISg" class="">CBgems.dae</td><td id="ZdIf" class="">0.0499s</td><td id="zrpz" class="">1.6659s</td></tr></tbody></table><p id="0b897b16-cede-433b-baad-d4adc7600a87" class="">The following are the running results and time.</p><ol type="1" id="b7bfc4ce-c507-4673-9fd3-b4b4b4673496" class="numbered-list" start="1"><li>With BVH:</li></ol><div id="f9d9d502-4df6-4eff-8dc2-6d668065dafb" class="column-list"><div id="96663fb7-4307-4423-9e1d-2e2cf5885f16" style="width:50%" class="column"><figure id="e1757ab1-9577-4ef3-8172-0a34d10a2957" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBcoil.png"><img style="width:565.4000244140625px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBcoil.png"/></a></figure><figure id="c1c520fb-6580-43cc-997a-ec5639ed60ad" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%202.png"><img style="width:336px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%202.png"/></a><figcaption>CBcoil.dae</figcaption></figure></div><div id="4e4747ab-1920-4e16-a0b6-25a52969e69e" style="width:50%" class="column"><figure id="53e36685-25ba-4acc-8b50-f55883a87cf4" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBgems.png"><img style="width:800px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBgems.png"/></a></figure><figure id="9d1b392d-8c7c-4844-88ac-d92eb0f53e05" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%203.png"><img style="width:336px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%203.png"/></a><figcaption>CBgems.dae</figcaption></figure></div></div><ol type="1" id="2d24a425-f000-410a-bc24-86e56da24713" class="numbered-list" start="2"><li>Without BVH:</li></ol><div id="40bf6e40-3d6b-4606-a3b8-dd338be82e74" class="column-list"><div id="cd6472f2-361b-4678-8f20-0856ad9ea1fe" style="width:50%" class="column"><figure id="e3d218d9-8a43-49b1-9145-3ba5e809519f" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBcoil%201.png"><img style="width:800px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBcoil%201.png"/></a></figure><figure id="8d6d65f6-1eb5-4c1c-8528-35b99bff2749" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%204.png"><img style="width:336px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%204.png"/></a><figcaption>CBcoil.dae</figcaption></figure></div><div id="3d0941b1-8b33-4eec-9e23-8b94f59fe662" style="width:50%" class="column"><figure id="8fd75b51-8b9a-49ff-a0aa-3ee0177abce5" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBgems%201.png"><img style="width:800px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBgems%201.png"/></a></figure><figure id="d6437dc6-f716-4f6a-8fdc-e524c5b7ab81" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%205.png"><img style="width:384px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%205.png"/></a><figcaption>CBgems.dae</figcaption></figure></div></div><p id="1967fede-9aba-4b6a-b7d5-42d33d490f73" class="">Rendering with BVH results in much faster rendering times than that of results without using BVH.  For example, you can see from the coil image, when we didn’t use BVH, it took about 50 seconds to run, but when we used BVH it only took 6/100 of a second to run.  Similarly for the gems render, without BVH it took about a second and a half, but with BVH it also took less than a second.  This makes sense as BVH makes it so that we are able to ignore the parts of the image that do not have intersections, by grouping up the needed triangles into nodes. In this way, BVH was able to significantly decrease our rendering time allowing the following parts of our project to render quicker.</p><p id="9b4d34a6-1e3d-495c-a780-7ec0d6fdd4aa" class="">
+</p><figure id="d6c9e37c-f5b6-4e8e-b7d5-c9647ebdceaa" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 3: Direct Illumination</mtext></mrow><annotation encoding="application/x-tex">\text{Part 3: Direct Illumination}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">Part 3: Direct Illumination</span></span></span></span></span></span></div></figure><p id="fa77e68c-5d0e-4e41-9a69-06aebe05d8c3" class="">In order to implement direct lighting we combined the use of one bounce light and zero bounce lighting. Zero-bounce lights assume that we are working with rays of light that are direct from the source to the camera. Thus we directly return the emission of the light. We then add in one-bounce lighting which assumes the light bounces off one surface to reach the camera. One-bounce lighting gives two options to use for sampling, uniform hemisphere sampling and lighting sampling. </p><p id="f1542121-3b1a-4d7f-93f9-6af61aa52b37" class="">When implementing uniform hemisphere we followed the Monte Carl Sum, by looping over the given variables <code>num_samples</code> or the number of scene lights by number of samples per area light source. We first create a Vector3D called total to store our results. In the loop, we get a sample from the <code>hemisphereSampler</code> and convert it to world space. We then create a new ray with an origin of <code>hit_p</code>, representing the light source, and use the sample as the direction. Then, we set the min_t of the ray as a super small value such as EPS_F to help with intersection and positioning issues and create a new intersection variable. Using this variable, we store information after checking if the former ray we made intersects with anything. If it does intersect, we get the emission of the intersection. If the emission vector is not 0, we update total by adding it to the (bsdf * the emission value * costheta) represented by a dot product of the given intersection, isect’s, normal, and the converted hemisphere sample.  Finally, we normalize the total, by dividing it by the number of samples, multiplying by 2 * PI, and then returning total.</p><p id="69a53682-d63f-4f5a-84a3-04a68b47e25c" class="">For lighting sampling using importance sampling, we also use the Monte Carl Sum, however this time we make two loops. The first looping over scene lights, which is a vector of pointers to scene lights. We then set a variable to <code>num_samples</code> to the area of the lights. After, we create 3 variables, a vector for our <code>wi</code>, which stores the direction between p and the light source using <code>wi</code> as the direction, a double storing the distance to the light source from the hit point, and a double called pdf which stores with the probability density function in the <code>wi</code> direction. We then check if the current <code>scene_light</code> we have is a delta light, if so we set <code>num_samples</code> to 1, or else it stays equal to <code>ns_area_lights</code>. Now we loop through the number of samples. In the loop, we first compute the radiance using the <code>sample_L</code> function and the variables we made earlier. We then convert the wi to object space from world space and then normalize it. Then, a new ray is created using the given var hit_p as the origin and wi as the direction. This ray represents a ray from the hitpoint to the light source. We then make sure the min_t is equal to EPS_F, once again for positioning issues, and also set the max_t to distToLight - EPS_F, to make sure we only look at the spaces between the light and hit point only and not include the light. We then check if this new_ray has an intersection, if it does, that means that there is an object between the hit_point and the light source so it would be more than one bounce, thus we ignore this case. On the other hand, if we don’t get an intersection we can add to the total the radiance * <code>costheta</code> * the <code>bdsf</code> of the first intersection, <code>isect</code>’s surface. Finally we divide all this by pdf and normalize by dividing <code>num_samples</code>. We then return total.</p><hr id="f20bc2ab-f6cd-4652-934f-faa10bdc3d47"/><p id="c4aafdfe-f926-457f-b0ad-96287044d2a0" class="">Below we show some images rendered with both implementations of the direct lighting function</p><ul id="09287887-2f96-4da2-bfad-3c35f7a133f3" class="bulleted-list"><li style="list-style-type:disc">Uniform Hemisphere Sampling:</li></ul><div id="306ddf72-3ec7-44ad-b908-48dd5cf7db35" class="column-list"><div id="12994ad4-9833-45a0-bd1a-f5e1e3cbec57" style="width:50%" class="column"><figure id="43c6802b-e909-4192-a8a5-22903a7d7470" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBbunny_16_8.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBbunny_16_8.png"/></a><figcaption>./pathtracer -t 8 -s 16 -l 8 -H -f CBbunny_H_16_8.png -r 480 360 ../dae/sky/CBbunny.dae</figcaption></figure></div><div id="4a4c9672-19ea-4dfe-bab8-537a23540b83" style="width:50%" class="column"><figure id="ab94bab6-9ee3-4b29-a271-f7f12bc0c8bb" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBbunny_64_32.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBbunny_64_32.png"/></a><figcaption>./pathtracer -t 8 -s 64 -l 32 -m 6 -H -f CBbunny_H_64_32.png -r 480 360 ../dae/sky/CBbunny.dae</figcaption></figure></div></div><ul id="1d5259e8-19f1-4eb2-9e24-ce140b71b2e1" class="bulleted-list"><li style="list-style-type:disc">Importance sampling:</li></ul><div id="8711718a-fc18-427a-a774-34469737a7db" class="column-list"><div id="444622f9-fa3f-40c7-8646-3b86458baaba" style="width:56.25%" class="column"><figure id="b6755055-ceb6-479e-a982-e01229d98360" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_1_1.png"><img style="width:432px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_1_1.png"/></a></figure></div><div id="a02b4b47-9acf-46ce-b890-794730ac7039" style="width:43.74999999999999%" class="column"><figure id="65e8eec2-f047-4243-bcb1-a785cb68e7d0" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/dragon_64_32.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/dragon_64_32.png"/></a></figure></div></div><div id="c59a474e-c3fd-420e-a160-0689ae11dded" class="column-list"><div id="91d8b734-9ba0-4106-a2a8-f6b07b38fc68" style="width:50%" class="column"><figure id="4b97ecef-3ef4-41e9-a744-ac6991d53877" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/dragon_64_32%201.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/dragon_64_32%201.png"/></a></figure></div><div id="e386da43-440d-46a4-9861-edbb469fbbd6" style="width:50%" class="column"><figure id="d738ce7a-9246-40f7-9de4-0c958858eb24" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/coil.png"><img style="width:432px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/coil.png"/></a></figure></div></div><p id="c625a502-7481-4e67-93c8-1d0e5fdf70ea" class="">Uniform hemisphere sampling here is a lot more even in terms of distribution between shadow and light, with it being a lot more of a gradient, however, compared to lighting sampling there is a lot more noise. This makes sense as uniform lighting samples equally over the hemisphere thus allowing the gradients between dark and light to be softer.</p><p id="85858bcc-2b4e-460d-81a7-177cfe8101db" class="">Lighting sampling is smoother, having less noise, however, it has harsher shadows and divisions between dark and light. This is because the lighting sampling focuses more on light concentration which causes the lighting effects to be harsher but also more accurate. </p><hr id="559ce3c0-60d9-42e6-9ad0-d3a2c87fdf41"/><p id="1aecf193-25f6-45ff-bc40-81112f4f188c" class="">Below we show the noise levels in soft shadows when rendering with 1, 4, 16, and 64 light rays (the <code>l</code> flag) and with 1 sample per pixel (the <code>s</code> flag) using light sampling.</p><div id="d675a97e-bd6b-4941-895e-5ecfb7022399" class="column-list"><div id="1a595b92-3d43-4df5-9942-b1c8157ed1c7" style="width:50%" class="column"><figure id="7e7b35fd-122d-4394-99b9-db18d51ce1f1" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_light_ray1.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_light_ray1.png"/></a><figcaption><code> -t 16 -s 1 -l 1 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code> </figcaption></figure></div><div id="4838be14-d3e9-474f-96c0-626f8ccb1a9e" style="width:50%" class="column"><figure id="609d3d56-cd20-421e-9bca-c14ece34daef" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_light_ray4.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_light_ray4.png"/></a><figcaption><code> -t 16 -s 1 -l 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code> </figcaption></figure></div></div><div id="bd83cc68-085f-44e7-be9e-c0e601829fbb" class="column-list"><div id="35a1f97e-c8f1-4607-bc5f-77faf16a47c8" style="width:50%" class="column"><figure id="f2e008e4-0947-46a4-9e9e-64e5f287d49d" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_light_ray16.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_light_ray16.png"/></a><figcaption><code> -t 16 -s 1 -l 16 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code></figcaption></figure><p id="3fe51210-e069-4958-ad77-a8f16ae6fa7a" class="">
+</p></div><div id="46c08f96-8a67-41c5-b6df-2c71cd786a3b" style="width:50%" class="column"><figure id="90a7f7f2-376c-4e3a-8553-ea2dc8888dd0" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_light_ray64.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_light_ray64.png"/></a><figcaption><code> -t 16 -s 1 -l 64 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code> </figcaption></figure></div></div><p id="b92f17ed-acc2-4de9-8aee-fa3dae561210" class="">It can be seen that as <code>l</code> increases, the noise gradually decreases</p><p id="4d3bc722-a472-405c-973a-75ce1e83f342" class="">
+</p><figure id="f74cf86c-c27e-40c1-b9d6-34b0cfb1f4ce" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Task 4: Direct Lighting by Importance Sampling Lights</mtext></mrow><annotation encoding="application/x-tex">\text{Task 4: Direct Lighting by Importance Sampling Lights}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Task 4: Direct Lighting by Importance Sampling Lights</span></span></span></span></span></span></div></figure><p id="87fd3a4d-28b4-40bd-9e33-ce978ec17b6b" class="">We created out indirect light function by first implementing <code>DiffuseBSDF:: sample_f</code> which takes in a <code>wi</code> pointer and <code>pdf</code> pointer and uses that the <code>wi</code> pointer to store a sample for <code>wi</code>, then it returns the <code>DiffuseBSDF::f</code> function which we wrote before. We then replace the <code>one_bounce</code> function in <code>est_radiance_global_illuminace</code> with a new one: <code>at_least_one_bounce</code>. </p><p id="6ae49707-ed4b-4b66-a567-eb4213fba90c" class=""><code>At_least_one_bounce</code> is similar to <code>one_bounce</code> but the main difference is that it is recursive. By doing this we are simulating how rays continuously bounce off multiple objects until they hit a light source if they were to be shot from the camera’s perspective. We first create 2 variables a double to store <code>pdf</code> and a vector to store the <code>wi</code>. Then we pass these into the <code>sample_f</code> function which gives us the <code>bdsf</code> of the current intersection. We then convert <code>wi</code> to world space, and create a new ray with the direction of <code>wi</code> and origin as the given <code>hit_p</code>. We then give the ray a depth of the old ray’s depth minus 1. We also set <code>min_t</code> = <code>EPS_F</code>, and then create a new intersection. Then we check if new ray has an intersection. If so we add to our total: our earlier <code>bdsf</code> output * the absolute value of the z direction of <code>wi</code> * a recursive call to <code>at_least_one_bounce</code>, but this time passing in the new ray and new intersection. We then divide this by the pdf.</p><p id="981297c9-3e62-426f-b6ff-fef8b28dc73e" class="">Later on, we added global illumination with Russian Roulette, which basically adds a randomness aspect using <code>coin_flip</code> function. We set the termination probability to 0.3, which is also what we divide our total by. This means that every time <code>at_least_one_bounce</code> is called recursively there is a 0.3 probability of terminating. By using Russian Roulette we are able to eliminate bias in the estimation of global illumination.</p><p id="8145486e-3f45-45da-b9a2-197b5fefdd38" class="">Below, according to each requirement, we list the results after rendering and analysis. </p><ol type="1" id="e9f13b92-942b-4c85-b111-ee847229395e" class="numbered-list" start="1"><li>Show some images rendered with global (direct and indirect) illumination. Use 1024 samples per pixel.</li></ol><div id="6e2ea1bf-bdb1-406e-ba9b-b771d765cc7e" class="column-list"><div id="1f0e84b3-80b3-4406-83c3-79a776cfc55e" style="width:50%" class="column"><figure id="13f4e861-3cf8-4003-9d0d-fa2000583669" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_5.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_5.png"/></a><figcaption><code> -t 16 -s 1024 -l 1 -m 5 -H -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code> </figcaption></figure></div><div id="f774cda9-602d-44f1-b889-cc559208ea2f" style="width:50%" class="column"><figure id="f67ed04d-bd3b-4c8f-9800-9c11ce4068ef" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBempty_1024.png"><img style="width:442px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBempty_1024.png"/></a><figcaption> <code>-t 16 -s 1024 -l 1 -m 5 -H -r 480 360 -f CBempty.png ../dae/sky/CBempty.dae</code> </figcaption></figure></div></div><div id="7726bc0c-969d-4342-b05b-bd738e619370" class="column-list"><div id="57d3831b-e285-48af-bd52-217513d2d2cb" style="width:50%" class="column"><figure id="bb4edffa-c3d6-4052-8c49-dbd8c229adc6" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false5.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false5.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 5 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code></figcaption></figure></div><div id="a6140421-333c-4e2e-84ad-f68904c84703" style="width:50.000000000000014%" class="column"><figure id="0ed2af7e-3958-475c-b3a1-c94a34b9f558" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Dragon.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Dragon.png"/></a><figcaption><code> -t 16 -s 1024 -l 1 -m 5 -r 480 360 -f dragon.png ../dae/sky/CBdragon.dae</code> </figcaption></figure></div></div><p id="8b783bc5-1f43-4f18-b54e-bbfdece1915d" class="">The two pictures above have more noise. This is because we used Uniform Hemisphere Sampling when obtaining global illumination. The two pictures below used Importance Sampling Lights, and the effect is much better.</p><p id="11a0a2d3-ed69-4332-8d32-27f38960954b" class="">
+</p><ol type="1" id="894a55c6-46e3-43ac-a456-a8ef40e7f3cc" class="numbered-list" start="2"><li>Pick one scene and compare rendered views first with <strong>only</strong> direct illumination, then <strong>only</strong> indirect illumination. Use 1024 samples per pixel. </li></ol><div id="38effbfd-ec56-44df-9e2f-f414ee1d0b05" class="column-list"><div id="db92d403-90d0-4d08-b72b-234f826f76c0" style="width:50%" class="column"><figure id="cfb24e95-a99e-459c-8dbb-d2ca670fc0bc" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_dire_ill.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_dire_ill.png"/></a><figcaption> Direct illumination with <code>-t 16 -s 1024 -l 1 -m 1 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code>(740.9954s)</figcaption></figure></div><div id="33981a02-b7b1-425e-9b6f-e32d4b4de4c2" style="width:50%" class="column"><figure id="db244ea1-4d90-4b6d-88d6-2696be4a5a4f" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%206.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%206.png"/></a><figcaption> Indirect illumination with <code>-t 16 -s 1024 -l 1 -m 5 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code>(2757.5452s)(Edit on <code>PathTracer::at_least_one_bounce_radiance(...)</code>)</figcaption></figure></div></div><p id="d4242751-b42b-407e-b17f-da37cbf27ecd" class="">Global illumination only uses 0 and 1 bounces, while indirect lighting only uses more than 2 bounce. </p><p id="ba578564-1744-4bd7-8aaa-38bcadf2ed75" class="">
+</p><ol type="1" id="3d65a06c-f4af-4eb6-bb15-1d6c2308385f" class="numbered-list" start="3"><li>For <em>CBbunny.dae</em>, render the mth bounce of light with <code>max_ray_depth</code> set to 0, 1, 2, 3, 4, and 5 (the <code>m</code> flag), and <code>isAccumBounces=false</code>. Explain in your writeup what you see for the 2nd and 3rd bounce of light, and how it contributes to the quality of the rendered image compared to rasterization. Use 1024 samples per pixel.</li></ol><p id="e092085d-96bf-429c-8526-0c9c9e2429b8" class="">Below are the rendering results with <code>max_ray_depth</code> from 0 to 5 and <code>isAccumBounces=false</code> . You can tell them based on the <code>m</code> flag.</p><div id="0cec0d82-f6d3-4a4b-bb92-28c0c408fed5" class="column-list"><div id="ae26eaa6-4521-4f6c-8cc7-3755299a9f7e" style="width:50%" class="column"><figure id="538a2398-c59b-4497-beb5-c74214e3a4b2" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false0.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false0.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 0 -r 480 360 -f -o 0 bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div><div id="911baefb-984c-4bd6-9e2a-c8dfcf85ab5a" style="width:50%" class="column"><figure id="1e8b8a5e-7e52-45d2-98d3-0921fc4b72a3" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false1.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false1.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 1 -r 480 360 -f -o 0 bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div></div><div id="4f52975e-3c8e-418b-a945-0cae2579b925" class="column-list"><div id="ccb63765-04ae-4abe-9f4a-47ab439a479b" style="width:50%" class="column"><figure id="8165eed8-c872-4c10-b269-ee35af0c8c74" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false2.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false2.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 2 -r 480 360 -f -o 0 bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div><div id="5540b10a-9801-4355-b580-1f03f85970dd" style="width:50%" class="column"><figure id="c231e85e-38b7-41e0-a2b2-67e6e5f012ca" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false3.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false3.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 3 -r 480 360 -f -o 0 bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div></div><div id="34567abf-29d0-449f-84f5-6d233b29c33e" class="column-list"><div id="fdb6639f-9e06-48f7-9d1b-4d2195335268" style="width:50%" class="column"><figure id="790a56a8-a150-4747-adc9-af66d0957b38" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false4.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false4.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 4 -r 480 360 -f -o 0 bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div><div id="9a3f3244-0796-41f2-9361-6bf7ba7e9dc8" style="width:50%" class="column"><figure id="6b8e92b8-7d02-49e0-b280-8ae568d23c01" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false5%201.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false5%201.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 5 -r 480 360 -f -o 0 bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div></div><p id="02dae91e-7546-41bd-a2b4-f389ac0d3337" class="">In the 2nd and 3rd bounce of light, we start to see reflections of red, white, and blue lights.  It helps with quality as it allows the image to look a bit more realistic due to it being a better representation of how light works. It also allows for a distinction of material as we can see which materials are used based off the way the light interacts with the objects. Each additional bounce of light that is rendered brings more subtlety and depth to the image, moving further away from the somewhat flat and artificial look that can result from basic rasterization techniques</p><p id="1edbfe0b-a11b-4af4-86fd-c25da90257b0" class="">
+</p><ol type="1" id="b6c627fa-9461-4808-912a-3cb0d7e9a9ca" class="numbered-list" start="4"><li>For <em>CBbunny.dae</em>, compare rendered views with <code>max_ray_depth</code> set to 0, 1, 2, 3, 4, and 5(the <code>m</code> flag). Use 1024 samples per pixel.</li></ol><p id="3f7727b0-4f38-4444-b57e-92111008e96f" class="">Below are our rendering results with <code>max_ray_depth</code> from 0 to 5. You can tell them based on the <code>m</code> flag.</p><div id="bb06a0ac-2077-445d-b30a-aeb2f7c72492" class="column-list"><div id="807cddd1-fcce-4959-b4ee-ac29bc44b51b" style="width:50%" class="column"><figure id="48e6399a-e23b-4afb-a113-65865869e384" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false0.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false0.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 0 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div><div id="0c40f2d5-0102-4aef-8e56-e7ea8a94ecd3" style="width:50.000000000000014%" class="column"><figure id="4b7f4e32-3008-44b7-a218-6e188d2ece19" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_dire_ill.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_dire_ill.png"/></a><figcaption> <code>-t 16 -s 1024 -l 1 -m 1 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code> </figcaption></figure></div></div><div id="a2f9f00b-b27e-45b8-a3c9-06195ae7b1ee" class="column-list"><div id="50bb58ac-21dc-453d-9e61-91db6954f38e" style="width:50%" class="column"><figure id="6655befc-4044-43e6-87bb-a22051ef890f" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false2%201.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false2%201.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 2 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div><div id="2cfd19b6-70a7-4485-b5d6-0cd33a9efb1b" style="width:50%" class="column"><figure id="ac874298-5a6b-4a50-bbc9-a45f011eb26d" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false3%201.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false3%201.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 3 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div></div><div id="edcb0b5f-5a54-4369-a75d-da4392552cc7" class="column-list"><div id="86e4e67a-fac8-492f-8dcc-a3a49eaa081c" style="width:50%" class="column"><figure id="b872a973-8657-4bc4-9c39-9046b9b368d1" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false4%201.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false4%201.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code></figcaption></figure></div><div id="d7a0c619-7939-4c0e-a2df-82025464a874" style="width:50%" class="column"><figure id="3006b04a-b98f-4504-b546-63237a864787" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false5.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_false5.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 5 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code></figcaption></figure></div></div><p id="be5a18d4-1050-4dc8-bada-ed37d572ecf3" class="">It can be seen that as m increases, the illumination of the image becomes richer and richer.</p><p id="e19cdbdf-a6b1-4f05-bf5d-1e563044a4c4" class="">
+</p><ol type="1" id="4e1c2a38-40d0-4547-bd5e-f33d2569d376" class="numbered-list" start="5"><li>For <em>CBbunny.dae</em>, output the Russian Roulette rendering with <code>max_ray_depth</code> set to 0, 1, 2, 3, 4, and 100(the <code>m</code> flag). Use 1024 samples per pixel.</li></ol><p id="1ca3fcfd-5b46-467c-9017-caa9a99196f0" class="">Below are our rendering results with <code>max_ray_depth</code> from 0 to 5. We set the probability of terminating to 0.3. You can tell them based on the <code>m</code> flag.</p><div id="d4205e5e-4eca-45b9-984f-c9bb89374779" class="column-list"><div id="1f127455-08aa-4f73-8e80-7a6998372f62" style="width:50%" class="column"><figure id="b3ac6ca2-1589-4de2-af61-b29b8c0227be" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_russian0.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_russian0.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 0 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae (The probability of terminating is 0.3)</code></figcaption></figure></div><div id="fba74ac2-ed41-4bff-9dbe-4c6116824818" style="width:50%" class="column"><figure id="4387769d-adb5-4d1e-844d-c07372442e0e" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_russian1.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_russian1.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 1 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae (The probability of terminating is 0.3)</code></figcaption></figure></div></div><div id="c8f66071-e47f-42a8-a68a-67a2c50cd317" class="column-list"><div id="ff9dd32c-b8bc-41db-8694-6bb4d5f0f593" style="width:50%" class="column"><figure id="92f53bdc-29d3-49fc-babc-88275640fb6d" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_russian2.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_russian2.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 2 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae (The probability of terminating is 0.3)</code></figcaption></figure></div><div id="c78a6a2f-e49f-470f-b8c5-25c5043dce3a" style="width:50%" class="column"><figure id="16988f71-66b8-4b45-a542-13adf6d7b977" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%207.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%207.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 3 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae (The probability of terminating is 0.3)</code></figcaption></figure></div></div><div id="6e461cd0-a97c-421d-9664-5b6ce76a7f1c" class="column-list"><div id="7b5125c0-e02b-4579-9691-28c6596c1c0a" style="width:50%" class="column"><figure id="a7bb2b7c-cfa4-443d-8c11-9e0ad67753b2" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%208.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%208.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae (The probability of terminating is 0.3)</code></figcaption></figure></div><div id="21052de4-0190-4320-accb-07f49e48ed9b" style="width:50%" class="column"><figure id="e07717aa-9565-4018-83c0-280fdbc6b8d7" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%209.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/Untitled%209.png"/></a><figcaption><code>-t 16 -s 1024 -l 1 -m 100 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae (The probability of terminating is 0.3)</code></figcaption></figure></div></div><p id="08d47859-2dd7-43e1-ad17-542eadd7ad76" class="">Russian Roulette rendering, compared to methods without it, enhances rendering efficiency and reduces computational costs without notably compromising image quality.</p><p id="7280dbaa-8349-4c56-b8e4-9387c085eccd" class="">
+</p><ol type="1" id="5046811e-62c4-4bdb-a3e9-b567be018dcf" class="numbered-list" start="6"><li>Pick one scene and compare rendered views with various <code>sample-per-pixel</code> rates, including at least 1, 2, 4, 8, 16, 64, and 1024. Use 4 light rays. </li></ol><p id="1177bd3d-0191-4ea7-9ece-c264ecd3070e" class="">Below are our rendering results with <code>sample-per-pixel</code> from 1 to 1024. You can tell them based on the <code>s</code> flag.</p><div id="2ed74ec5-ab3e-4849-8969-3deb1a201c25" class="column-list"><div id="e965d4d9-d234-47f2-9797-48d81e543fcc" style="width:50%" class="column"><figure id="2b75a8b1-9b1f-40ca-85df-2ae21cf6e6e5" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s1.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s1.png"/></a><figcaption><code>-t 16 -s 1 -l 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div><div id="17b18e98-40b1-4045-9cf5-971ff267ef33" style="width:50%" class="column"><figure id="ce4e8a5b-4653-4ca7-af16-9a3d9ac843a4" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s2.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s2.png"/></a><figcaption><code>-t 16 -s 2 -l 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div></div><div id="9fc7b13f-53ec-4fd4-b19c-ed27c67aef14" class="column-list"><div id="ee1f8bee-6678-4198-88fe-0e1639a083ed" style="width:50%" class="column"><figure id="81634c27-dcee-46fb-9f6a-efc8f8503e37" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s4.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s4.png"/></a><figcaption><code>-t 16 -s 4 -l 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae</code></figcaption></figure></div><div id="d4d28829-f540-4093-baba-5c3635781d1c" style="width:50%" class="column"><figure id="80a667b6-e22b-4ee9-a205-84e4f7f3ef20" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s8.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s8.png"/></a><figcaption><code>-t 16 -s 8 -l 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div></div><div id="c4f0ee35-34fe-4cd1-ba11-9c7f091e24d9" class="column-list"><div id="e74df576-34ce-4186-b46c-30c6fc4c30a7" style="width:50%" class="column"><figure id="8c10b2c9-8f79-4643-ab36-d1c2f6b1d551" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s16.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s16.png"/></a><figcaption><code>-t 16 -s 16 -l 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div><div id="42953d72-c830-497d-8b27-3a86dbb1cff6" style="width:50%" class="column"><figure id="46ae61b2-abd3-4278-9212-2c9b392aca50" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s64.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s64.png"/></a><figcaption><code>-t 16 -s 64 -l 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code></figcaption></figure></div></div><div id="0b7eeb70-00e2-4bed-868a-b145ff8e5e20" class="column-list"><div id="4e3f85c9-e92c-40e3-9d9b-e1a2ee1ac03b" style="width:50%" class="column"><figure id="cfa8bb94-4188-400f-b2de-3ae55cceca15" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s1024.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_s1024.png"/></a></figure></div><div id="889b1d54-ba33-4563-99a7-baecb01fd037" style="width:50%" class="column"><p id="0d10a5e7-3171-4650-8e1a-aefa232af2f8" class=""><code>-t 16 -s 1024 -l 4 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae </code></p><p id="cbcc9772-24d5-4244-9614-9fe5dee9a339" class="">
+</p></div></div><p id="86bdf5f3-6ebb-4585-b7b5-5a3cade3d845" class="">As the sampling rate increases, the image noise decreases and becomes clearer.</p><p id="0afee4ab-17e2-4ad4-938f-f90066ebc765" class="">
+</p><figure id="7084d060-9e6b-43a5-bcd4-c8534e402e5e" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Task 5: Adaptive Sampling</mtext></mrow><annotation encoding="application/x-tex">\text{Task 5: Adaptive Sampling}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Task 5: Adaptive Sampling</span></span></span></span></span></span></div></figure><p id="ea94d4f1-3e0c-4448-a7a4-57269401a1ec" class="">Adaptive sampling addresses the challenge of employing a uniform (high) sampling rate for each pixel by focusing more sampling efforts on the intricate areas of the image. A simple algorithm checks if a pixel has converged to a reliable color by comparing its statistical variance to a threshold; if the variance is low enough, no further samples are added. </p><p id="42d43711-a676-4bd4-8a35-ce26461ed3e6" class="">In our implementation, firstly, we sample in batches, accumulate color values and calculate variance and mean. Then we calculate the <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span></span><span>﻿</span></span> which is equal to <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1.96</mn><mo>⋅</mo><mfrac><mi>σ</mi><msqrt><mi>n</mi></msqrt></mfrac></mrow><annotation encoding="application/x-tex">1.96\cdot\frac{\sigma}{\sqrt{n}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1.96</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.2334em;vertical-align:-0.538em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.6954em;"><span style="top:-2.6259em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord sqrt mtight"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8059em;"><span class="svg-align" style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mtight" style="padding-left:0.833em;"><span class="mord mathnormal mtight">n</span></span></span><span style="top:-2.7659em;"><span class="pstrut" style="height:3em;"></span><span class="hide-tail mtight" style="min-width:0.853em;height:1.08em;"><svg xmlns="http://www.w3.org/2000/svg" width='400em' height='1.08em' viewBox='0 0 400000 1080' preserveAspectRatio='xMinYMin slice'><path d='M95,702
+c-2.7,0,-7.17,-2.7,-13.5,-8c-5.8,-5.3,-9.5,-10,-9.5,-14
+c0,-2,0.3,-3.3,1,-4c1.3,-2.7,23.83,-20.7,67.5,-54
+c44.2,-33.3,65.8,-50.3,66.5,-51c1.3,-1.3,3,-2,5,-2c4.7,0,8.7,3.3,12,10
+s173,378,173,378c0.7,0,35.3,-71,104,-213c68.7,-142,137.5,-285,206.5,-429
+c69,-144,104.5,-217.7,106.5,-221
+l0 -0
+c5.3,-9.3,12,-14,20,-14
+H400000v40H845.2724
+s-225.272,467,-225.272,467s-235,486,-235,486c-2.7,4.7,-9,7,-19,7
+c-6,0,-10,-1,-12,-3s-194,-422,-194,-422s-65,47,-65,47z
+M834 80h400000v40h-400000z'/></svg></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2341em;"><span></span></span></span></span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight" style="margin-right:0.03588em;">σ</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.538em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span><span>﻿</span></span> to measure the pixel&#x27;s convergence. We compare it to <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow></mrow><mi>m</mi><mi>a</mi><mi>x</mi><mi>T</mi><mi>o</mi><mi>l</mi><mi>e</mi><mi>r</mi><mi>a</mi><mi>n</mi><mi>c</mi><mi>e</mi><mo>∗</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\text{}maxTolerance *\mu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"></span><span class="mord mathnormal">ma</span><span class="mord mathnormal">x</span><span class="mord mathnormal" style="margin-right:0.13889em;">T</span><span class="mord mathnormal">o</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal" style="margin-right:0.02778em;">er</span><span class="mord mathnormal">an</span><span class="mord mathnormal">ce</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">μ</span></span></span></span></span><span>﻿</span></span>. If it is within a specified tolerance level, indicating that additional samples are unlikely to significantly change the pixel color, the function stops sampling early. Finally, we return the color value and sample number to the samplebuffer.</p><p id="4a6e90ae-67b6-4489-8dbc-9cfdf828cee5" class="">We got the rendering results from <code>CBbunny.dae</code> and <code>CBboil.dae</code> as shown below.</p><div id="e0195af9-6740-48cd-b429-7359e7b68653" class="column-list"><div id="e60c0b76-8225-4266-ae67-516abdcb3292" style="width:50%" class="column"><figure id="5b6c8d0a-836a-4c4a-b1aa-f8e826fa9ced" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny%201.png"><img style="width:331px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny%201.png"/></a></figure></div><div id="c86f7329-23cd-491d-9d66-4a331595a885" style="width:50%" class="column"><figure id="3838a5b2-b3f2-4f22-92c1-70830b8bb2a6" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_rate.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/bunny_rate.png"/></a><figcaption><code>-t 16 -s 2048 -l 1 -m 5 -a 64 0.05 -r 480 360 -f bunny.png ../dae/sky/CBbunny.dae (The probability of Russian Roulette terminating is 0.3)</code></figcaption></figure></div></div><div id="bae2f6c0-707c-42a5-818a-29bf452c4079" class="column-list"><div id="63caab6d-7e1f-4d12-900e-ea220707f83e" style="width:50.000000000000014%" class="column"><figure id="e8e0a070-82d2-4dcb-ab4c-11f1915c2e4a" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBcoil%202.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBcoil%202.png"/></a></figure><p id="62958bb6-3715-4323-bbc8-489a866c3fec" class="">
+</p></div><div id="8a681d8d-1395-49f8-8742-01577ca64ad5" style="width:50%" class="column"><figure id="9be89db6-e49f-4faf-ac5c-83b5b2405371" class="image"><a href="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBcoil_rate.png"><img style="width:480px" src="Untitled%20ff8d76ef2d8940d6b79f4b8ded2265f1/CBcoil_rate.png"/></a><figcaption><code>-t 16 -s 2048 -l 1 -m 5 -a 64 0.05 -r 480 360 -f coil.png ../dae/sky/CBboil.dae(Without Russian Roulette) </code> </figcaption></figure></div></div><p id="23ca62d1-1b6d-4d68-99ec-79df97018a8f" class="">From the sample rate images, we can see that the sample rates on the bunny and coil are very high, while the light source and Cornea box only need few samples to converge. Another thing to notice is that in the result from <code>CBbunny.dae</code> ,the area near light source is red color, which is different from our website. This is because the use of <code>Russian Roulette</code> . If we don’t use it , just like result from CBboil, everything is ok.</p><div id="f1342e45-dc95-412a-9c53-f143b10f997b" class="column-list"></div><p id="fcc1bd64-e57c-4406-8bc3-8d6ab339d2f5" class="">
+</p><p id="82803ad0-1bdc-4991-96e6-e14f91cb7c75" class="">
+</p><p id="d2a795cc-21e0-4597-ae14-d88769aad21d" class=""><span style="border-bottom:0.05em solid">We Found A Useful Tool: Automating Renders with a Batch Script in Windows</span></p><ol type="1" id="8e385a70-4f7e-42f2-aaab-f1535e0891f6" class="numbered-list" start="1"><li><strong>Create a batch script</strong> (<code>run_loops.bat</code>)  in project&#x27;s output directory </li></ol><ol type="1" id="14232496-c80f-4ecf-8391-01a77428d3d3" class="numbered-list" start="2"><li><strong>Batch script content</strong>:<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="5827e8cf-afd5-4d52-86bc-14984ff5b7e0" class="code"><code class="language-Plain Text" style="white-space:pre-wrap;word-break:break-all">@echo off
+for %%i in (0 1 2 3 4 5) do (
+  pathtracer.exe -t 16 -s 1024 -l 1 -m %%i -r 480 360 -f bunny_false%%i.png ../../../dae/sky/CBbunny.dae
+)</code></pre><p id="334a16b8-d973-4024-8fb9-1d4e27e07642" class="">Replace <code>pathtracer.exe</code> with the correct path to your executable file if the script is not in the same directory as <code>pathtracer.exe</code>. </p></li></ol><ol type="1" id="784f56ea-b7dc-436b-b92b-480796421dcb" class="numbered-list" start="3"><li><strong>Running the script</strong>:<ul id="58cf58b1-36f7-4753-8322-4c3ab8e1464e" class="bulleted-list"><li style="list-style-type:disc">Double click it</li></ul><p id="7860e03d-03a8-42f2-8505-5874a17a8db9" class="">
+</p></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
