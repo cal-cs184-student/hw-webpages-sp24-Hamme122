@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="c2bf635b-d38d-4e36-b2be-e3277629540c" class="page sans"><header><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><figure id="fbd47210-710d-4986-be44-3091ecb7d4b8" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mstyle mathsize="1.44em"><mtext>CS 184. Foundations of Computer Graphics 2024 Spring</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.44em"><mtext>Homework 4: Cloth Sim</mtext><mspace linebreak="newline"></mspace><mstyle mathsize="1.2em"><mtext>Destiny Luong, Zhenzhe Li</mtext></mstyle></mstyle></mstyle></mrow><annotation encoding="application/x-tex">\Large \text{CS 184. Foundations of Computer Graphics 2024 Spring}\\ \Large \text{Homework 4: Cloth Sim}\\
+\large \text{Destiny Luong, Zhenzhe Li}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.28em;vertical-align:-0.28em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord">CS 184. Foundations of Computer Graphics 2024 Spring</span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:1em;"></span><span class="mord text sizing reset-size6 size8"><span class="mord">Homework 4: Cloth Sim</span></span></span><span class="mspace newline sizing reset-size6 size8"></span><span class="base"><span class="strut" style="height:1.0667em;vertical-align:-0.2333em;"></span><span class="mord text sizing reset-size6 size7"><span class="mord">Destiny Luong, Zhenzhe Li</span></span></span></span></span></span></div></figure><figure id="879de7e3-c1ed-4459-a5fa-7bb85874e0bf" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Overview</mtext></mrow><annotation encoding="application/x-tex">\text{Overview}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord text"><span class="mord">Overview</span></span></span></span></span></span></div></figure><p id="43662ece-5266-45d4-b173-f5fabe0da628" class="">In this project, we learned how to create wireframes in order to simulate cloth falling. We did this by creating a system of pointers, masses, and springs, which we attached to each other and then moved around in order to create a cloth-like object. We also learned how to create simulations or animations, as well as how to deal with bugs like clipping, which we did through managing collisions, both with other objects as well as itself. This was created by using Hooke’s law to create forces to move the cloth, and also Verlet integration in order to compute the position of the point_mass at each timestep. The clipping and collisions were dealt with by checking for different constraints which we then used to compute the positions of the point_masses, moving them away from the surfaces they come in contact with, while keeping in mind friction. For self_collisions, we placed each point_mass in an imaginary 3D space and divided them up into a hashmap. Using the hashmap, we compared each of the point_masses to ones nearby and then recomputed their positions. Finally, we also learned how to shade and texture objects using Diffuse Shading, Blinn-Phong Shading, Texture Mapping, such as displacement mapping and bump mapping, and finally Environment-Mapped Reflections, creating them using multiple equations given in class. </p><p id="414bbc89-9183-4431-ac8a-2eaa2ce81894" class="">
+</p><p id="87133290-938b-4374-b890-1b8e5de06dca" class="">In order to complete this project both of us split the project into sections and then completed them separately. When one person finished their task they would move on to the next one, if the task relied on another task to be completed in order to work, that person would add in temporary code and then once the other person finishes, they would continue to run and debug the task. If any of us needed help, we would inform our partner and they would help take a look at the bug, otherwise we would got to OH and ask questions on Ed, either together or by ourselves, but then filling our partner in.</p><p id="945648be-f4e5-4f60-96af-6b37ea088418" class="">
+</p><figure id="796d3a29-9d64-4c82-8244-9f557005a016" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 1: Masses and springs</mtext></mrow><annotation encoding="application/x-tex">\text{Part 1: Masses and springs}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 1: Masses and springs</span></span></span></span></span></span></div></figure><p id="2c49a2fb-36d6-4e80-be30-26792e7acd2f" class="">Below are the cloth wireframe to show the structure of point masses and springs.</p><div id="a85d9a19-9c53-487a-a1c1-6cf34fbb0dd9" class="column-list"><div id="cc00f345-1778-4fa9-a3e7-fce2847cd1e0" style="width:50%" class="column"><figure id="529f503d-d948-45de-84ca-eb8f63675723" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Wire2.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Wire2.png"/></a></figure></div><div id="befaf353-c950-4b28-b76a-5aecb0616984" style="width:50%" class="column"><figure id="3ac59f08-7dda-4f3e-920c-27ddc88d6b8a" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/MoreWire.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/MoreWire.png"/></a></figure></div></div><p id="5892af04-b204-4635-91bf-026b5352399e" class="">Below are the wireframe looks like (1) without any shearing constraints, (2) with only shearing constraints, and (3) with all constraints:</p><p id="a057d0cf-e919-4edf-bc26-16c05c678185" class="">All Constraints:</p><figure id="fa7dd45f-8918-46ed-9b4b-90fea112bb0c" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Wireframe.png"><img style="width:720px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Wireframe.png"/></a></figure><p id="d8b85eda-32bb-4772-a7b9-4bb5f55368ea" class="">No Shearing:</p><figure id="451ca039-126c-4cf2-892c-e6854b049cb9" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/NoShearing.png"><img style="width:720px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/NoShearing.png"/></a></figure><p id="115bd016-3c7d-4a05-8312-6e2b04324527" class="">Only Shearing:</p><figure id="2c37ff0d-3484-4ecd-87d7-6a133734200f" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Only_Shearing.png"><img style="width:720px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Only_Shearing.png"/></a></figure><p id="c27fdef3-ac45-4d3c-82ba-bd82295bdc7e" class="">
+</p><figure id="a5b6c407-f61b-456d-be46-55bdefd6e015" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 2: Simulation via numerical integration</mtext></mrow><annotation encoding="application/x-tex">\text{Part 2: Simulation via numerical integration}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 2: Simulation via numerical integration</span></span></span></span></span></span></div></figure><ol type="1" id="458d4d39-a951-46db-b3a7-c43019972439" class="numbered-list" start="1"><li>Change the spring constant <code>ks</code></li></ol><div id="450d80b4-bbed-447d-97b1-98b53c6c76bf" class="column-list"><div id="1562ea94-a40f-48d5-a909-e0481408e034" style="width:33.333333333333336%" class="column"><figure id="9003c170-9c2e-433c-8008-cb0f5452e04c" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled.png"><img style="width:288px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled.png"/></a><figcaption><code>ks</code> = 50</figcaption></figure></div><div id="e3c77422-b7a3-4f7f-9684-23fba651941c" style="width:33.33333333333333%" class="column"><figure id="276bc38c-defa-42f5-8d9e-94115290c804" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%201.png"><img style="width:240px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%201.png"/></a><figcaption><code>ks</code> = 5000</figcaption></figure></div><div id="3ab4ef10-f4c6-4022-bd71-d96ba1b05cd6" style="width:33.333333333333336%" class="column"><figure id="da346716-db9d-4492-a8e5-bb35d78bc14c" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%202.png"><img style="width:240px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%202.png"/></a><figcaption><code>ks</code> = 20000</figcaption></figure></div></div><p id="2f255641-98e1-46e4-94e1-ceb231ded6a3" class="">We can see that the change in <code>ks</code> will change the stiffness of the fabric. A high spring constant means the cloth is very stiff and resists deformation so the folds will be few while a low spring constant means the fabric is more flexible and easily deformed, resulting in more numerous and softer folds. </p><p id="80252867-7659-4949-8269-0977e2db8513" class="">Additionally, when <code>ks</code> is low, the cloth will take a long time to settle into its final resting position due to the low restoring force provided by the low spring constant and during motion, it will sway and deform easily, responding strongly to even small external forces. This is opposite to the high <code>ks</code>.</p><ol type="1" id="786b5544-b8c3-4116-8e21-cae9ab63dd53" class="numbered-list" start="2"><li>Change the density</li></ol><div id="b810058a-f974-4260-aaab-4f4f80e5cfc9" class="column-list"><div id="1ccf7f59-84c5-4d05-b3bd-76253d9eae7b" style="width:50%" class="column"><figure id="7028af75-9218-4ea5-9687-7480e9e6e454" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%203.png"><img style="width:384px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%203.png"/></a><figcaption>density = 1g/cm^2</figcaption></figure></div><div id="a5e80aa8-5b59-44d8-af93-ba5531f0d362" style="width:50%" class="column"><figure id="f83e86b4-cfa4-4673-a593-b98fd549972e" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%204.png"><img style="width:1276px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%204.png"/></a><figcaption>density = 10000g/cm^2</figcaption></figure></div></div><p id="2cc2247a-fa85-42e7-8326-9165ce48d858" class="">Changing the density of the object affects the heaviness of the cloth, resulting in more noticeable sagging and slightly faster descent. A higher density causes the top of the cloth to appear highly curved, with the folds becoming more defined as external forces push the <code>PointMasses</code> farther downward. A lower density has the opposite effect on the cloth. As it descends, its movements appear more gradual and fluid, with less emphasis on the formation of deep folds.</p><ol type="1" id="ea951608-e093-4e25-9fac-52e758d848c3" class="numbered-list" start="3"><li>Change the damping</li></ol><div id="a6f6d0ab-b1d9-469f-9d46-205ecf6fc81f" class="column-list"><div id="b46e8789-17d1-4006-aa76-75c6dc2de226" style="width:50%" class="column"><figure id="ce6358bc-afee-4c75-be1f-0ccda05cecdc" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%205.png"><img style="width:1274px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%205.png"/></a><figcaption>Damping=0.01%</figcaption></figure></div><div id="bf6d0945-f289-4d35-a16d-efe9ed6c5404" style="width:50%" class="column"><figure id="527e0af6-3a7d-431c-8253-eb7ffbcb719c" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%206.png"><img style="width:565.4000244140625px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%206.png"/></a><figcaption>Damping=0.89%</figcaption></figure></div></div><p id="9b58a3d6-c22f-4c58-bf72-290e1288345e" class="">Adjusting the damping of the cloth alters its speed of position changes. Lower damping values lead to faster position changes. It is just like the cloth is flying. Conversely, with a big damping value, the cloth descends gradually and gracefully, as the rate of position change is diminished.</p><ol type="1" id="db0d3bbc-6599-401d-9770-5a589f46b40e" class="numbered-list" start="4"><li>Pinned4 cloth</li></ol><p id="82120771-b9f3-4a9a-819d-45a015efe090" class="">Below is our shaded cloth from <code>scene/pinned4.json</code>. It is like a net bag with four corners pulled.</p><figure id="1eb8b0ac-44a7-4d3b-9a77-f8c449d62b69" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%207.png"><img style="width:432px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%207.png"/></a><figcaption>Result from <code>scene/pinned4.json</code></figcaption></figure><p id="373bdfb5-4fe6-4510-abf8-5fbf7109a78b" class="">
+</p><figure id="2bec1147-b21d-4a65-b989-928a3100e4a8" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 3: Handling collisions with other objects</mtext></mrow><annotation encoding="application/x-tex">\text{Part 3: Handling collisions with other objects}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 3: Handling collisions with other objects</span></span></span></span></span></span></div></figure><p id="3865f030-1fcd-4fa5-8495-f2f7f338a143" class="">Below are our shaded cloth results using <code>ks = 500, 5000, 50000</code>.</p><div id="e1716618-a569-4f10-b661-bbfe6641d528" class="column-list"><div id="ea70c347-7a96-4bd8-a86a-0102f29815f4" style="width:50%" class="column"><figure id="7ef9bdff-6d61-414f-9121-45e37481816e" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%208.png"><img style="width:240px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%208.png"/></a><figcaption><code>ks</code> = 500</figcaption></figure></div><div id="bc025737-9172-4531-bcbb-44559ae67510" style="width:50.000000000000014%" class="column"><figure id="242a63cf-0a89-40f1-aec4-194ab43e0772" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%209.png"><img style="width:240px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%209.png"/></a><figcaption><code>ks</code> = 5000</figcaption></figure></div></div><figure id="a863aaee-eae5-4a07-ba25-8b1dd16515ac" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2010.png"><img style="width:240px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2010.png"/></a><figcaption><code>ks</code> = 50000</figcaption></figure><p id="88c67b00-e7e8-42fb-ac28-437006da8299" class="">We can see that when the sphere is intersected by cloth with varying k values, the stiffness changes, affecting how the cloth conforms to the sphere&#x27;s surface. With a k value of 500, it bends more and covers the sphere better because it is softer. If the cloth&#x27;s k value is 50,000, it is stiffer, so it doesn&#x27;t bend around the sphere much and has fewer folds. It just looks like a rabbit!</p><p id="a8a771df-2355-449a-a9e0-e926eb6e3333" class="">And then we can see our clothes lying peacefully on the plane!</p><figure id="6c79a450-dea6-41d2-9325-2b01f0e124a5" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2011.png"><img style="width:336px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2011.png"/></a><figcaption>Result from <code>plane.json</code></figcaption></figure><p id="110a3267-e29a-4345-88b5-7b9dca2c288d" class="">
+</p><figure id="1f9241fd-7d20-4cf2-b97d-530809894723" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 4: Handling self-collisions</mtext></mrow><annotation encoding="application/x-tex">\text{Part 4: Handling self-collisions}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord text"><span class="mord">Part 4: Handling self-collisions</span></span></span></span></span></span></div></figure><p id="afffb138-6c5f-4e52-a316-7ecf879cbfc1" class="">Below document how our cloth falls and folds on itself, starting with an early, initial self-collision and ending with the cloth at a more restful state.</p><div id="e5d69382-48c9-489b-a98b-13b1143c5b76" class="column-list"><div id="85711003-f74a-4bb8-aa7a-35be720c637c" style="width:50%" class="column"><figure id="9c54c697-4503-4835-8fda-2679c4f9cb8f" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/EarlyCol.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/EarlyCol.png"/></a></figure></div><div id="5ecf45f6-1349-4539-b709-5d7143f2bf43" style="width:50%" class="column"><figure id="68295d84-f662-4054-a5d2-f03ee1207eb8" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Col2.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Col2.png"/></a></figure></div></div><div id="53f35da7-2a76-4232-ade5-ee6bf8ffe917" class="column-list"><div id="3a8df187-dddf-443d-b6fc-bcf4e4d96131" style="width:50%" class="column"><figure id="b1c33cb5-9d5e-429f-aca3-8e4ab5cddf79" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Col3.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Col3.png"/></a></figure></div><div id="4153cb89-a415-45d9-b5ec-294136d83584" style="width:50%" class="column"><figure id="e4f7a042-d6fb-4cb1-9fa0-6fafc8024118" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/ColFinal.png"><img style="width:331px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/ColFinal.png"/></a></figure></div></div><p id="1b9d380e-932d-4204-b052-5128b597927c" class="">Then we vary the <code>density</code> as well as <code>ks</code> .</p><div id="5437928f-40d8-47f2-87ed-24729789ebef" class="column-list"><div id="0afb4feb-48b4-4a39-b509-b671f402de0a" style="width:50%" class="column"><p id="32a83e15-95a4-4218-8e7b-85cf772f892a" class="">High KS:</p></div><div id="b942e47d-8987-47f4-bf84-2f45de4c538b" style="width:50%" class="column"><p id="595f8293-4124-413c-8f0a-cf778b72a705" class="">Low KS:</p></div></div><div id="d425d375-57a2-49f7-8606-6d51ba6bfd9c" class="column-list"><div id="f2377c0b-ebb0-4967-8469-27d84e622398" style="width:50%" class="column"><figure id="54688b5d-b8f6-4dd7-a9f5-1613cb646b9f" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/HighKS.png"><img style="width:1277px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/HighKS.png"/></a></figure></div><div id="91a98bee-1c87-476c-bdfb-0cba2473a486" style="width:50%" class="column"><figure id="f2bdc979-3740-48e3-b847-a876328855d5" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/LowKS.png"><img style="width:331px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/LowKS.png"/></a></figure></div></div><p id="dd57dd5a-72a4-4c42-9909-e99059eb9cda" class="">When the <code>ks</code> is low the cloth becomes more crinkled and has more smaller folds. When the ks is high the cloth has larger and smoother folds. </p><div id="077fc9f2-2389-42c7-9a40-8f12375d9df0" class="column-list"><div id="d8716f03-eac7-41d8-a67b-5f243806b8e0" style="width:50%" class="column"><p id="9fb45432-eed5-49ba-a28f-9fb000f3b4c4" class="">High Density:</p></div><div id="50f5d69b-e733-4807-b9c6-f8771cbc69fb" style="width:50%" class="column"><p id="51d815ad-f3b9-491f-82bf-89bd011c3b05" class="">Low Density:</p></div></div><div id="1daa655a-3e02-4fef-99af-56d08844e81c" class="column-list"><div id="8fb85aac-8d50-4586-9a59-a98e560e0d96" style="width:50%" class="column"><figure id="80bbccb1-747f-4e16-b04c-55dd59a9e62f" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/High_Density.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/High_Density.png"/></a></figure></div><div id="29a406c6-6991-432e-a1d9-e85b43216c7f" style="width:50%" class="column"><figure id="4b4702ef-c3ee-448a-a637-6e266f53974e" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/LowDensity.png"><img style="width:331px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/LowDensity.png"/></a></figure></div></div><p id="f28cee97-dc53-4593-bf9e-1860af37f1a4" class="">When the <code>density</code> is high the cloth seems to act in a way that makes it seem thicker and with more weight, thus the fabric is a bit more resistant to folding. When the density is low, the fabric seems lighter and thinner, while the fabric itself seems easier to modify. There were also more folds because of this. </p><p id="d5abc246-15bd-4c79-9d80-f65aab2246a2" class="">
+</p><figure id="9ee8c972-3e9a-430c-b6fe-bf5a74e445ad" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>Part 5: Shaders</mtext></mrow><annotation encoding="application/x-tex">\text{Part 5: Shaders}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord text"><span class="mord">Part 5: Shaders</span></span></span></span></span></span></div></figure><ol type="1" id="490845f6-c7b3-4134-a55b-a27f659ba15b" class="numbered-list" start="1"><li>Introduction of the shader program</li></ol><p id="4fd14b09-a7ae-4c13-a722-690c56df5699" class="">A shader program is an algorithm that calculates how much amount of light and shadow certain parts of an object has and applies it to the parts. Shader programs are made up of vertex shaders and fragment shaders. We use vertex shaders to move vertices and change their vector, to create a final vertex position, which we then use as an input into fragment shaders, which uses it to compute a color and apply it to the material.</p><ol type="1" id="1cb1cce3-1a9b-42b7-be94-f39f6529f7e5" class="numbered-list" start="2"><li>Blinn-Phong Model</li></ol><p id="0576d49c-8616-4e4c-a42b-ce8221204765" class="">Blinn-Phong is a shading model that uses the viewer’s perspective in order to decide how to apply light and color, which relies heavily on the view and reflection vectors.  To calculate this, it uses the equation:</p><figure id="27984fe0-ee88-43b4-a44c-051f0a93b531" class="equation"><style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><div class="equation-container"><span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mi mathvariant="bold">L</mi><mo>=</mo><msub><mi mathvariant="bold">k</mi><mi>a</mi></msub><msub><mi mathvariant="bold">I</mi><mi>a</mi></msub><mo>+</mo><msub><mi mathvariant="bold">k</mi><mi>d</mi></msub><mo stretchy="false">(</mo><mi mathvariant="bold">I</mi><mi mathvariant="normal">/</mi><msup><mi>r</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mi mathvariant="bold">n</mi><mo>⋅</mo><mi mathvariant="bold">l</mi><mo stretchy="false">)</mo><mo>+</mo><msub><mi mathvariant="bold">k</mi><mi>s</mi></msub><mo stretchy="false">(</mo><mi mathvariant="bold">I</mi><mi mathvariant="normal">/</mi><msup><mi>r</mi><mn>2</mn></msup><mo stretchy="false">)</mo><mi>max</mi><mo>⁡</mo><mo stretchy="false">(</mo><mn>0</mn><mo separator="true">,</mo><mi mathvariant="bold">n</mi><mo>⋅</mo><mi mathvariant="bold">h</mi><msup><mo stretchy="false">)</mo><mi>p</mi></msup><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\mathbf{L}=\mathbf{k}_a\mathbf{I}_a+\mathbf{k}_d(\mathbf{I}/r^2)\max(0,\mathbf{n}\cdot\mathbf{l})+\mathbf{k}_s(\mathbf{I}/r^2)\max(0,\mathbf{n}\cdot\mathbf{h})^p,</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6861em;"></span><span class="mord mathbf">L</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathbf">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mord mathbf">I</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathbf">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathbf">I</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbf">l</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.1141em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathbf">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathbf">I</span><span class="mord">/</span><span class="mord"><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8641em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mop">max</span><span class="mopen">(</span><span class="mord">0</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathbf">n</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathbf">h</span><span class="mclose"><span class="mclose">)</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.7144em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">p</span></span></span></span></span></span></span></span><span class="mpunct">,</span></span></span></span></span></div></figure><p id="5ed8f085-a6de-4dfc-bf86-b8519f2d0fc4" class=""> with <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">k_a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>l</mi><mi>a</mi></msub></mrow><annotation encoding="application/x-tex">l_a</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0197em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">a</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">k_d</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.3361em;"><span style="top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span>, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">k_s</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1514em;"><span style="top:-2.55em;margin-left:-0.0315em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">s</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></span><span>﻿</span></span> being different colors, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span></span><span>﻿</span></span> being the light source vector, <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></span><span>﻿</span></span> being the normal vector of the surface, and <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal">h</span></span></span></span></span><span>﻿</span></span> being the highlight vector which is the bisector of <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">v</span></span></span></span></span><span>﻿</span></span> and <style>@import url('https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css')</style><span data-token-index="0" contenteditable="false" class="notion-text-equation-token" style="user-select:all;-webkit-user-select:all;-moz-user-select:all"><span></span><span><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">I</span></span></span></span></span><span>﻿</span></span>.</p><p id="b01d9e7d-e862-473f-b4f7-606b266b141f" class="">Below are our results under four situations.</p><div id="9aa6d299-a927-4579-a7b0-4c6cc94d6163" class="column-list"><div id="48d9137b-10bf-427d-85e4-33e23b8e23ca" style="width:50%" class="column"><figure id="c449f150-527e-46c8-b03c-28372efc6d5f" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2012.png"><img style="width:1277px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2012.png"/></a><figcaption>The ambient component</figcaption></figure></div><div id="97b99340-0d28-4ab0-92fc-6042a9aca42c" style="width:50%" class="column"><figure id="40c500a2-7a0a-4a2a-b12d-34b4798e8451" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2013.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2013.png"/></a><figcaption>The diffuse component</figcaption></figure></div></div><div id="a21a3dbc-4cdf-4c77-9c7f-530d5cd8139b" class="column-list"><div id="4324c756-b8b5-473f-a958-30fc0dfc955b" style="width:50%" class="column"><figure id="d71a6750-de7e-4869-a519-59ee0885560f" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2014.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2014.png"/></a><figcaption>The specular component</figcaption></figure></div><div id="ea1d63a6-6e6d-440f-9bd0-20269d892436" style="width:50%" class="column"><figure id="5106a6d8-a87f-4d09-9d9c-3d4c719f53c4" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2015.png"><img style="width:1271px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2015.png"/></a><figcaption>Entire Blinn-Phong model</figcaption></figure></div></div><ol type="1" id="f4027f7e-0fc9-4c19-a02d-ed0821f7d658" class="numbered-list" start="3"><li>Texture mapping</li></ol><p id="e45f269e-6eff-49f9-bd4b-a77cbe30f2ba" class="">Below is our texture mapping result using the picture of our music library as a texture.</p><div id="ecda2f80-dfb8-48f6-8caa-b576c0cceb9b" class="column-list"><div id="cf8087d9-1e38-4201-bbfd-9765f6bcd6a1" style="width:50%" class="column"><figure id="8d339a32-0a77-4af3-b547-bd66dc6a87a3" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2016.png"><img style="width:1279px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2016.png"/></a><figcaption>Original texture</figcaption></figure></div><div id="54353ec0-ebc6-44ca-95c4-54c37e464690" style="width:50%" class="column"><figure id="0ccd394c-006b-46a7-87b9-f74721831a59" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2017.png"><img style="width:432px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2017.png"/></a><figcaption>Sphere with texture</figcaption></figure></div></div><ol type="1" id="6c9756c2-11dc-4f2b-81ad-4cd835156ded" class="numbered-list" start="4"><li>Bump mapping and displacement mapping</li></ol><p id="03a18dbd-ba37-49ee-8671-fbcb57afd738" class="">Below are the results using the <code>texture_3.png</code></p><div id="d6ee724c-430f-4fe7-9169-abef1e423985" class="column-list"><div id="cb8f4f40-582e-411a-a381-ae665b6fc506" style="width:50%" class="column"><figure id="b3a7a938-b149-4c3b-96dc-1b1b7953689e" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2018.png"><img style="width:1277px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2018.png"/></a><figcaption>Bump mapping on the cloth</figcaption></figure></div><div id="fde8b7a5-6a50-4548-9242-72895dc82493" style="width:50%" class="column"><figure id="cecb3c19-2a4f-461c-b8f6-fdd7c672c081" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2019.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2019.png"/></a><figcaption>Bump mapping on the sphere</figcaption></figure></div></div><figure id="cb12657a-2bdb-4d88-8edd-5db4450f47fb" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2020.png"><img style="width:528px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2020.png"/></a><figcaption>Displacement mapping on the sphere</figcaption></figure><p id="a8e8fe4e-10b5-4355-9768-0225b97d8ecd" class="">Below are the results using <code>o 16 -a 16</code> and then <code>o 128 -a 128</code>.</p><div id="4574d206-1a18-48b7-a193-04834313659b" class="column-list"><div id="97989c82-f454-48ef-8d51-f6a961bd3845" style="width:50%" class="column"><figure id="fcc54906-0905-473f-8288-a730a9a00ce8" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2021.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2021.png"/></a><figcaption><code>o 16 -a 16</code> in bump mapping</figcaption></figure></div><div id="aba5c573-ed3b-43e5-8470-5d6efd3ded10" style="width:50%" class="column"><figure id="fb8726c3-c487-432f-84a2-2a80dc6313c4" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2022.png"><img style="width:1277px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2022.png"/></a><figcaption><code>o 16 -a 16</code> in displacement mapping</figcaption></figure></div></div><div id="d1d8e9fb-edec-41e6-8bcc-7779187b0170" class="column-list"><div id="7824d3eb-5894-4113-9ba0-1864ecc1f7bd" style="width:50%" class="column"><figure id="ae55b617-3665-492e-b8ab-1c2594f691db" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2023.png"><img style="width:1275px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2023.png"/></a><figcaption><code>-o 128 -a 128</code> in bump mapping</figcaption></figure></div><div id="48b66e5f-9449-49f5-9ad3-9c78f86769f0" style="width:50%" class="column"><figure id="6982ec58-2641-4233-8318-d71c33de8db7" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2024.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2024.png"/></a><figcaption><code>-o 128 -a 128</code> in displacement mapping</figcaption></figure></div></div><p id="9ca01180-62dd-46c6-b73b-f646a4d5b9b4" class="">Adjusting the sphere&#x27;s roughness seems to have a bigger impact on displacement mapping compared to bump mapping. Displacement mapping has stronger shadows and bumpier textures compared to bump mapping. On the other hand, bump mapping is much smoother with fewer shadows appearing, especially near the edges. </p><p id="74041587-5d56-427d-9b83-1476af162cbc" class="">In the <code>o 16 -a 16</code>  version, bump mapping seems more realistic than displacement mapping as the shape of the sphere is very uneven. Along with the way the shadows drape over the bumpy sphere it makes the object look even more unrealistic, as they don’t follow any of the shapes of the bumps, but rather trace the shape as if the sphere was completely round. As such the smoother bump-mapping sphere looks a lot closer to life, as the shadows actually follow the shape. </p><p id="0a4ce9ee-2518-4aa9-a4e5-8dce48432df5" class="">In the <code>-o 128 -a 128</code> version, displacement mapping makes the sphere look a lot more realistic than if it were to use bump mapping. This is because the sphere is not completely smooth, having lots of texturization, and the ridges and the shadows follow this shape, being darker in the crevices. On the other hand, bump-mapping continues to produce a relatively smooth ball, with similar shadows to the one in the<code>o 16 -a 16</code>.</p><ol type="1" id="b033b71c-ccb3-401a-a0e6-b7971247c4fb" class="numbered-list" start="5"><li>Mirror shader</li></ol><p id="b5959632-9382-4b91-badd-e8382347bdf2" class="">Below are our shaded cloth from the mirror shader on the cloth and on the sphere.</p><div id="78e5c6ef-480a-4f51-932a-6328a93af240" class="column-list"><div id="0934bf52-832e-4783-be78-1a8131ad22c9" style="width:50%" class="column"><figure id="e4e0f6b0-5239-44ae-ab76-ab9c7374c875" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2025.png"><img style="width:1274px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2025.png"/></a><figcaption>Cloth on Sphere with Mirror Shader</figcaption></figure></div><div id="2d817e2c-7a39-4cad-bf16-5c25ee2695fc" style="width:50%" class="column"><figure id="89d48e9a-f48d-45a5-8f87-34076e76c5ce" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2026.png"><img style="width:1274px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2026.png"/></a><figcaption>Cloth on Sphere with Mirror Shader</figcaption></figure></div></div><ol type="1" id="c1247f38-06db-4bc4-b383-e3b8222e90dc" class="numbered-list" start="6"><li>Custom shader</li></ol><p id="f529e598-4838-45ff-861a-3f71f41239e9" class="">Mirror shader and music library are the most beautiful i think. So we combine the texture mapping shader and mirror shader as the custom shader and the results are shown below:</p><div id="ffc802c1-79b3-4b69-b3dd-625c7f15b8eb" class="column-list"><div id="811d71ef-e9c3-4474-bd6c-63e497557473" style="width:50%" class="column"><figure id="f7c7ee60-72d5-4363-80bf-5e39a7fe5818" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2027.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2027.png"/></a><figcaption>Original texture and mirror shade</figcaption></figure></div><div id="3b7852f6-ee87-4f10-9fb0-b9b8e8345189" style="width:50%" class="column"><figure id="03291f65-cb94-4e84-b528-13eddd4d3d76" class="image"><a href="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2028.png"><img style="width:708px" src="Untitled%20c2bf635bd38d4e36b2bee3277629540c/Untitled%2028.png"/></a><figcaption>Cloth on Sphere with custom shader</figcaption></figure></div></div><p id="48857825-0252-4309-8747-161d50e9b798" class="">
+</p><p id="7545dd37-31ed-4eab-b459-e18b4e190f12" class="">
+</p><p id="af95ad10-2593-4c5f-835b-9ca5a35fd294" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
